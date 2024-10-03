@@ -5,79 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LANREN</title>
 <!-- 新 Bootstrap5 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <!--  popper.min.js 用于弹窗、提示、下拉菜单 -->
-<script src="https://cdn.staticfile.net/popper.js/2.11.8/umd/popper.min.js"></script>
+<script src="js/popper.min.js"></script>
 <!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
-<script src="https://cdn.staticfile.net/twitter-bootstrap/5.3.3/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <noscript><h1><span style="color:red"><center>现在已经114514世纪了能不能换一个支持JavaScript的浏览器？</center></span></h1></noscript>
-    <noscript><h1><span style="color:red"><center>如果您的浏览器支持JavaScript，请在设置打开再重新打开文件试试。</center></span></h1></noscript>
-    <div class="container-fluid p-5 bg-primary text-white text-center"><p style="margin:0;text-align: center;"><span id="currentTime"></span></p>
+    <noscript>
+        <h1><span style="color:red"><center>我们注意到你可能会在使用某些功能时遇到障碍。这可能是因为你的浏览器不支持JavaScript。我们建议你更新到支持JavaScript的浏览器，以获得完整的教程体验。</center></span></h1>
+    </noscript>
+    <noscript>
+        <h1><span style="color:red"><center>"我们发现您的浏览器可能没有启用JavaScript。请打开设置，启用JavaScript，启用后，请重新尝试打开本教程，看看是否可以正常工作。</center></span></h1>
+    </noscript>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <p style="margin:0;text-align: center;"><span id="currentTime"></span></p>
         <div class="btn-group d-none d-md-block" role="group" aria-label="Button group">
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="教程主页" type="button" class="btn btn-danger" onclick="showContent('content1');">主页（默认）</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="B站视频教程（360p）" type="button" class="btn btn-danger" onclick="showContent('content14');">视频教程<span class="badge bg-secondary">Bate</span></button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐视频推荐" type="button" class="btn btn-danger" onclick="showContent('content15');">MV推荐<span class="badge bg-secondary">Bate</span></button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steam教程" type="button" class="btn btn-danger" onclick="showContent('content2');">Steam</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools教程" type="button" class="btn btn-danger" onclick="showContent('content3');">Steamtools</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="SteamLoader教程" type="button" class="btn btn-danger" onclick="showContent('content4');">SteamLoader</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamless教程" type="button" class="btn btn-danger" onclick="showContent('content5');">Steamless</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools疑难解答" type="button" class="btn btn-danger" onclick="showContent('content6');">Tools疑难解答</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="Onekey疑难解答" type="button" class="btn btn-danger" onclick="showContent('content7');">Onekey疑难解答</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="网站/软件推荐" type="button" class="btn btn-danger" onclick="showContent('content8');">网站/软件推荐</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="游戏推荐" type="button" class="btn btn-danger" onclick="showContent('content9');">游戏推荐</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐推荐" type="button" class="btn btn-danger" onclick="showContent('content10');">音乐推荐</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="LANREN制作的其他作品" type="button" class="btn btn-danger" onclick="showContent('content11');">其他作品</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程谢鸣列表" type="button" class="btn btn-danger" onclick="showContent('content12');">谢鸣</button>
-        <button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程的更新日志（不全）" type="button" class="btn btn-danger" onclick="showContent('content13');">更新日志</button>
-        </div><div class="d-block d-md-none">
-        <div class="btn-group" style="left:200px;">
-            <div class="btn-group dropstart">
-            <button style="margin-left: 200px" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">全部</button>
-            <ul class="dropdown-menu">
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="教程主页" type="button" class="btn btn-danger" onclick="showContent('content1');">主页（默认）</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="B站视频教程（360p）" type="button" class="btn btn-danger" onclick="showContent('content14');">视频教程<span class="badge bg-secondary">Bate</span></button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐视频推荐" type="button" class="btn btn-danger" onclick="showContent('content15');">MV推荐<span class="badge bg-secondary">Bate</span></button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steam教程" type="button" class="btn btn-danger" onclick="showContent('content2');">Steam</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools教程" type="button" class="btn btn-danger" onclick="showContent('content3');">Steamtools</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="SteamLoader教程" type="button" class="btn btn-danger" onclick="showContent('content4');">SteamLoader</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamless教程" type="button" class="btn btn-danger" onclick="showContent('content5');">Steamless</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools疑难解答" type="button" class="btn btn-danger" onclick="showContent('content6');">Tools疑难解答</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Onekey疑难解答" type="button" class="btn btn-danger" onclick="showContent('content7');">Onekey疑难解答</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="网站/软件推荐" type="button" class="btn btn-danger" onclick="showContent('content8');">网站/软件推荐</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="游戏推荐" type="button" class="btn btn-danger" onclick="showContent('content9');">游戏推荐</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐推荐" type="button" class="btn btn-danger" onclick="showContent('content10');">音乐推荐</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="LANREN制作的其他作品" type="button" class="btn btn-danger" onclick="showContent('content11');">其他作品</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程谢鸣列表" type="button" class="btn btn-danger" onclick="showContent('content12');">谢鸣</button></li>
-        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程的更新日志（不全）" type="button" class="btn btn-danger" onclick="showContent('content13');">更新日志</button></li>
-        </ul></div></div></div></div>
-    <div id="music-player" class="music-player"><audio id="audioPlayer" controls loop>
-        <source src="http://music.163.com/song/media/outer/url?id=1956794669.mp3" type="audio/mpeg">您的浏览器不支持audio标签。</audio></div>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="教程主页" type="button" class="btn btn-danger" onclick="showContent('content1');">主页（默认）</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="B站视频教程（360p）" type="button" class="btn btn-danger" onclick="showContent('content14');">视频教程<span class="badge bg-secondary">Beta</span></button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐视频推荐" type="button" class="btn btn-danger" onclick="showContent('content15');">MV推荐<span class="badge bg-secondary">Beta</span></button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steam教程" type="button" class="btn btn-danger" onclick="showContent('content2');">Steam</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools教程" type="button" class="btn btn-danger" onclick="showContent('content3');">Steamtools</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="SteamLoader教程" type="button" class="btn btn-danger" onclick="showContent('content4');">SteamLoader</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamless教程" type="button" class="btn btn-danger" onclick="showContent('content5');">Steamless</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools疑难解答" type="button" class="btn btn-danger" onclick="showContent('content6');">Tools疑难解答</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="Onekey疑难解答" type="button" class="btn btn-danger" onclick="showContent('content7');">Onekey疑难解答</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="网站/软件推荐" type="button" class="btn btn-danger" onclick="showContent('content8');">网站/软件推荐</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="游戏推荐" type="button" class="btn btn-danger" onclick="showContent('content9');">游戏推荐</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐推荐" type="button" class="btn btn-danger" onclick="showContent('content10');">音乐推荐</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="LANREN制作的其他作品" type="button" class="btn btn-danger" onclick="showContent('content11');">其他作品</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程谢鸣列表" type="button" class="btn btn-danger" onclick="showContent('content12');">谢鸣</button>
+            <button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程的更新日志（不全）" type="button" class="btn btn-danger" onclick="showContent('content13');">更新日志</button>
+        </div>
+        <div class="d-block d-md-none">
+            <div class="btn-group" style="left:200px;">
+                <div class="btn-group dropstart">
+                    <button style="margin-left: 200px" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">全部</button>
+                    <ul class="dropdown-menu">
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="教程主页" type="button" class="btn btn-danger" onclick="showContent('content1');">主页（默认）</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="B站视频教程（360p）" type="button" class="btn btn-danger" onclick="showContent('content14');">视频教程<span class="badge bg-secondary">Bate</span></button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐视频推荐" type="button" class="btn btn-danger" onclick="showContent('content15');">MV推荐<span class="badge bg-secondary">Bate</span></button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steam教程" type="button" class="btn btn-danger" onclick="showContent('content2');">Steam</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools教程" type="button" class="btn btn-danger" onclick="showContent('content3');">Steamtools</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="SteamLoader教程" type="button" class="btn btn-danger" onclick="showContent('content4');">SteamLoader</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamless教程" type="button" class="btn btn-danger" onclick="showContent('content5');">Steamless</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Steamtools疑难解答" type="button" class="btn btn-danger" onclick="showContent('content6');">Tools疑难解答</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="Onekey疑难解答" type="button" class="btn btn-danger" onclick="showContent('content7');">Onekey疑难解答</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="网站/软件推荐" type="button" class="btn btn-danger" onclick="showContent('content8');">网站/软件推荐</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="游戏推荐" type="button" class="btn btn-danger" onclick="showContent('content9');">游戏推荐</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="音乐推荐" type="button" class="btn btn-danger" onclick="showContent('content10');">音乐推荐</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="LANREN制作的其他作品" type="button" class="btn btn-danger" onclick="showContent('content11');">其他作品</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程谢鸣列表" type="button" class="btn btn-danger" onclick="showContent('content12');">谢鸣</button></li>
+                        <li><button data-bs-toggle="tooltip" data-bs-placement="top" title="本教程的更新日志（不全）" type="button" class="btn btn-danger" onclick="showContent('content13');">更新日志</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="music-player" class="music-player">
+        <audio id="audioPlayer" controls loop>
+            <source src="http://music.163.com/song/media/outer/url?id=1956794669.mp3" type="audio/mpeg">您的浏览器不支持audio标签。
+        </audio>
+    </div>
     <div id="content10" class="content">
-    <h2>默认有100首音乐且单曲循环</h2>
-    <p></p>
-    <li style="margin-left: 10px;">非游戏BGM</li>
-    <div class="btn-group">
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music1">热门</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music2">K-POP(韩国流行音乐)</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music6">Alan Walker</button></div>
-    <li style="margin-left: 10px;">游戏BGM</li>
-    <div class="btn-group">
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music3">Orzmic</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music4">Phigros</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music5">Cheetah Mobile Games & Cheetah Games 同人</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music7">Death Stranding（死亡搁浅）(神)</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music8">Dark Deception（黑暗欺骗）</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music9">Far Cry（孤岛惊魂）</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music10">The Room</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music11">Alan Wake 2</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music12">Call of Duty（使命召唤）</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music13">Candleman（蜡烛人）</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music14">Metro Exodus（地铁：离去）</button>
-    <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music15">THE FINALS（最终决战）</button></div></div>
-            <!--热门-->
-        <div id="Music1" class="collapse text-center"><br />
+        <h2>默认有100首音乐且单曲循环</h2>
+        <p></p>
+        <li style="margin-left: 10px;">非游戏BGM</li>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music1">热门</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music2">K-POP(韩国流行音乐)</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music6">Alan Walker</button>
+        </div>
+        <li style="margin-left: 10px;">游戏BGM</li>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music3">Orzmic</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music4">Phigros</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music5">Cheetah Mobile Games & Cheetah Games 同人</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music7">Death Stranding（死亡搁浅）(神)</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music8">Dark Deception（黑暗欺骗）</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music9">Far Cry（孤岛惊魂）</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music10">The Room</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music11">Alan Wake 2</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music12">Call of Duty（使命召唤）</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music13">Candleman（蜡烛人）</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music14">Metro Exodus（地铁：离去）</button>
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Music15">THE FINALS（最终决战）</button>
+        </div>
+    </div>
+    <!--热门-->
+    <div id="Music1" class="collapse text-center"><br />
         <button class="btn btn-light" onclick="playTrack(65)">Waiting For Love - Avicii</button>
         <button class="btn btn-light" onclick="playTrack(66)">In This Shirt - The Irrepressibles</button>
         <button class="btn btn-light" onclick="playTrack(68)">Golden Hour - JVKE</button>
@@ -85,19 +101,22 @@
         <button class="btn btn-light" onclick="playTrack(70)">Love is Gone - SLANDER,Dylan Matthew</button>
         <button class="btn btn-light" onclick="playTrack(74)">Daylight - Seredris</button>
         <button class="btn btn-light" onclick="playTrack(88)">Tough Love - PattyCake</button>
-        <button class="btn btn-light" onclick="playTrack(82)">Tough Love (Remix) - PattyCake</button></div>
-            <!--KPOP-->
-        <div id="Music2" class="collapse text-center"><br />
+        <button class="btn btn-light" onclick="playTrack(82)">Tough Love (Remix) - PattyCake</button>
+    </div>
+    <!--KPOP-->
+    <div id="Music2" class="collapse text-center"><br />
         <button class="btn btn-light" onclick="playTrack(89)">Psycho - Red Velvet</button>
         <button class="btn btn-light" onclick="playTrack(91)">Bad Boy(MV) - Red Velvet</button>
         <button class="btn btn-light" onclick="playTrack(92)">Happiness - Red Velvet</button>
-        <button class="btn btn-light" onclick="playTrack(93)">Hold On Tight - Aespa</button></div>
-            <!--Orzmic-->
-        <div id="Music3" class="collapse text-center"><br />
+        <button class="btn btn-light" onclick="playTrack(93)">Hold On Tight - Aespa</button>
+    </div>
+    <!--Orzmic-->
+    <div id="Music3" class="collapse text-center"><br />
         <button class="btn btn-light" onclick="playTrack(0)">星相运轨-The End of Time- - EndCat-终猫（默认音乐）</button>
-        <button class="btn btn-light" onclick="playTrack(25)">The Everlasting Rain - AiSS</button></div>
-            <!--Phigros-->
-        <div id="Music4" class="collapse text-center"><br />
+        <button class="btn btn-light" onclick="playTrack(25)">The Everlasting Rain - AiSS</button>
+    </div>
+    <!--Phigros-->
+    <div id="Music4" class="collapse text-center"><br />
         <button class="btn btn-light" onclick="playTrack(1)">创 / Demiurge - Rabpit</button>
         <button class="btn btn-light" onclick="playTrack(2)">S.A.T.E.L.L.I.T.E. - かめりあ</button>
         <button class="btn btn-light" onclick="playTrack(3)">PRAGMATISM -RESURRECTION- -Laur</button>
@@ -105,36 +124,42 @@
         <button class="btn btn-light" onclick="playTrack(12)">WATER(Feat.Miku) - A-39,沙包P,初音ミク</button>
         <button class="btn btn-light" onclick="playTrack(26)">Cross†Soul (feat. Syepias) - HyuN</button>
         <button class="btn btn-light" onclick="playTrack(27)">Retribution - Kry.exe,nm-y</button>
-        <button class="btn btn-light" onclick="playTrack(60)">青丘 - BLACK 0</button></div>
-            <!--Cheetah Mobile Games & Cheetah Games 同人-->
-        <div id="Music5" class="collapse text-center"><br />
+        <button class="btn btn-light" onclick="playTrack(60)">青丘 - BLACK 0</button>
+    </div>
+    <!--Cheetah Mobile Games & Cheetah Games 同人-->
+    <div id="Music5" class="collapse text-center"><br />
         <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music5-1">Rolling Sky 2</button>
         <div id="Music5-1" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(7) ">FATE - Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(13)">太阳雨 - 张晓贞</button></div>
+            <button class="btn btn-light" onclick="playTrack(7)">FATE - Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(13)">太阳雨 - 张晓贞</button>
+        </div>
         <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music5-2">Rolling Sky</button>
         <div id="Music5-2" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(95)">海盗船 - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(96)">埃及 - 猎豹游戏-Cheetah Mobile Games</button></div>
+            <button class="btn btn-light" onclick="playTrack(95)">海盗船 - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(96)">埃及 - 猎豹游戏-Cheetah Mobile Games</button>
+        </div>
         <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music5-3">Dancing Line</button>
         <div id="Music5-3" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(5)">末日-The End - Theo5970 - Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(83)">战殇-The War - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(87)">青石巷-The Alley - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(90)">三周年-The 3rd Anniversary - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(94)">海洋-The Ocean - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(97)">丑小鸭-The Ugly Duckling - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(98)">游乐园-The Amusement Park - 猎豹游戏-Cheetah Mobile Games</button>
-        <button class="btn btn-light" onclick="playTrack(99)">天空之梦-Dream of Sky - 猎豹游戏-Cheetah Mobile Games</button></div>
+            <button class="btn btn-light" onclick="playTrack(5)">末日-The End - Theo5970 - Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(83)">战殇-The War - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(87)">青石巷-The Alley - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(90)">三周年-The 3rd Anniversary - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(94)">海洋-The Ocean - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(97)">丑小鸭-The Ugly Duckling - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(98)">游乐园-The Amusement Park - 猎豹游戏-Cheetah Mobile Games</button>
+            <button class="btn btn-light" onclick="playTrack(99)">天空之梦-Dream of Sky - 猎豹游戏-Cheetah Mobile Games</button>
+        </div>
         <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music5-4">Dancing Line 同人</button>
         <div id="Music5-4" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(6)">Tales of Dragonia - BrunuhVille</button>
-        <button class="btn btn-light" onclick="playTrack(10)">Comptine D'un Autre Été, L'après-Midi - Yann Tiersen</button>
-        <button class="btn btn-light" onclick="playTrack(11)">Eutopia - Las Lau</button>
-        <button class="btn btn-light" onclick="playTrack(13)">太阳雨 - 张晓贞</button>
-        <button class="btn btn-light" onclick="playTrack(0)">星相运轨-The End of Time- - EndCat-终猫（默认音乐）</button></div></div>
-            <!--Alan Walker-->
-        <div id="Music6" class="collapse text-center"><br />
+            <button class="btn btn-light" onclick="playTrack(6)">Tales of Dragonia - BrunuhVille</button>
+            <button class="btn btn-light" onclick="playTrack(10)">Comptine D'un Autre Été, L'après-Midi - Yann Tiersen</button>
+            <button class="btn btn-light" onclick="playTrack(11)">Eutopia - Las Lau</button>
+            <button class="btn btn-light" onclick="playTrack(13)">太阳雨 - 张晓贞</button>
+            <button class="btn btn-light" onclick="playTrack(0)">星相运轨-The End of Time- - EndCat-终猫（默认音乐）</button>
+        </div>
+    </div>
+    <!--Alan Walker-->
+    <div id="Music6" class="collapse text-center"><br />
         <button class="btn btn-light" onclick="playTrack(85)">Tired - Gavin James , Alan Walker</button>
         <button class="btn btn-light" onclick="playTrack(86)">Faded - Alan Walker</button>
         <button class="btn btn-light" onclick="playTrack(36)">Sad Sometimes - Alan Walker & CORSAK胡梦周 & 黄霄雲</button>
@@ -147,10 +172,11 @@
         <button class="btn btn-light" onclick="playTrack(45)">The Spectre - Alan Walker</button>
         <button class="btn btn-light" onclick="playTrack(46)">Darkside - Alan Walker , Au/Ra , Tomine Harket</button>
         <button class="btn btn-light" onclick="playTrack(47)">Sing Me to Sleep - Alan Walker</button>
-        <button class="btn btn-light" onclick="playTrack(67)">Unsure - Alan Walker,Kylie Cantrall</button></div>
-            <!--死亡搁浅-->
-        <div id="Music7" class="collapse text-center"><br />
-        <p>需要花一点耐心听</p>
+        <button class="btn btn-light" onclick="playTrack(67)">Unsure - Alan Walker,Kylie Cantrall</button>
+    </div>
+    <!--死亡搁浅-->
+    <div id="Music7" class="collapse text-center"><br />
+        <p>需要花一点时间耐心听</p>
         <button class="btn btn-light" onclick="playTrack(43)">Ghost - Au/Ra - Alan Walker</button>
         <button class="btn btn-light" onclick="playTrack(75)">Bones - Low Roar,Jofridur Akadottir</button>
         <button class="btn btn-light" onclick="playTrack(76)">Don't Be So Serious - Low Roar</button>
@@ -159,9 +185,10 @@
         <button class="btn btn-light" onclick="playTrack(79)">Trigger - Major Lazer,Khalid,Death Stranding: Timefall</button>
         <button class="btn btn-light" onclick="playTrack(80)">I'll Keep Coming - Low Roar</button>
         <button class="btn btn-light" onclick="playTrack(81)">Asylums for the Feeling - Silent Poets,Leila Adu</button>
-        <button class="btn btn-light" onclick="playTrack(84)">Death Stranding - CHVRCHES</button></div>
-            <!--Dark Deception-->
-        <div id="Music8" class="collapse text-center"><br />
+        <button class="btn btn-light" onclick="playTrack(84)">Death Stranding - CHVRCHES</button>
+    </div>
+    <!--Dark Deception-->
+    <div id="Music8" class="collapse text-center"><br />
         <h3><a href="https://store.steampowered.com/app/332950/Dark_Deception/">Steam官网</a></h3>
         <button class="btn btn-light" onclick="playTrack(8)">The Real Meat - Daniel Dombrowsky</button>
         <button class="btn btn-light" onclick="playTrack(9)">Repercussions - Daniel Dombrowsky</button>
@@ -170,75 +197,88 @@
         <button class="btn btn-light" onclick="playTrack(49)">Mind Your Manors - Daniel Dombrowsky</button>
         <button class="btn btn-light" onclick="playTrack(50)">Bad Rabbit - Rockit Gaming,Lucky</button>
         <button class="btn btn-light" onclick="playTrack(51)">Always Near - Rockit Gaming,MC Goldiloxx</button>
-        <button class="btn btn-light" onclick="playTrack(52)">The Notorious Pig - Rockit Gaming,Hangry</button></div>
-            <!--Far Cry-->
-        <div id="Music9" class="collapse text-center"><br />
+        <button class="btn btn-light" onclick="playTrack(52)">The Notorious Pig - Rockit Gaming,Hangry</button>
+    </div>
+    <!--Far Cry-->
+    <div id="Music9" class="collapse text-center"><br />
         <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music9-1">Far Cry 6（孤岛惊魂6）</button>
         <div id="Music9-1" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(71)">Libertad - Pedro Bromfman</button>
-        <button class="btn btn-light" onclick="playTrack(72)">'67 - Pedro Bromfman</button>
-        <button class="btn btn-light" onclick="playTrack(73)">The Lion and the Lamb - Pedro Bromfman</button></div>
+            <button class="btn btn-light" onclick="playTrack(71)">Libertad - Pedro Bromfman</button>
+            <button class="btn btn-light" onclick="playTrack(72)">'67 - Pedro Bromfman</button>
+            <button class="btn btn-light" onclick="playTrack(73)">The Lion and the Lamb - Pedro Bromfman</button>
+        </div>
         <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music9-2">Far Cry 5（孤岛惊魂5）</button>
         <div id="Music9-2" class="collapse"><br />
-        <h3><a href="https://store.steampowered.com/app/552520/Far_Cry_5/">孤岛惊魂5 Steam官网</a></h3>
-        <br /><button type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#Music9-2-1">费丝.席德(妖女)</button>
-        <div id="Music9-2-1" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(14)">Oh John (Reinterpretation) - Hammock</button>
-        <button class="btn btn-light" onclick="playTrack(22)">We Will Rise Again (Reinterpretation) - Hammock</button>
-        <button class="btn btn-light" onclick="playTrack(53)">Let the Water Wash Away Your Sins (Reinterpretation) - Hammock</button>
-        <button class="btn btn-light" onclick="playTrack(55)">Now He's Our Father (Reinterpretation) - Hammock</button>
-        <button class="btn btn-light" onclick="playTrack(61)">Oh the Bliss (Reinterpretation) - Hammock</button>
-        <button class="btn btn-light" onclick="playTrack(62)">Help Me Faith (Reinterpretation) - Hammock</button></div>
-        <br /><button type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#Music9-2-2">约瑟夫.席德(圣父)</button>
-        <div id="Music9-2-2" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(20)">Now That This Old World Is Ending - Dan Romer</button>
-        <button class="btn btn-light" onclick="playTrack(21)">When the Morning Light Shines In - Dan Romer</button></div></details>
-        <br /><button type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#Music9-2-3">雅各.席德(战士)</button>
-        <div id="Music9-2-3" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(63)">We Will Rise Again - Dan Romer,Gregory And The Hawk</button>
-        <button class="btn btn-light" onclick="playTrack(64)">Help Me Faith - Dan Romer,Madi Diaz</button>
-        </div></details></div></details>
-        <br /><button type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#Music9-3">Far Cry 3（孤岛惊魂3）</button>
+            <h3><a href="https://store.steampowered.com/app/552520/Far_Cry_5/">孤岛惊魂5 Steam官网</a></h3>
+            <br /><button type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#Music9-2-1">费丝.席德(妖女)</button>
+            <div id="Music9-2-1" class="collapse"><br />
+                <button class="btn btn-light" onclick="playTrack(14)">Oh John (Reinterpretation) - Hammock</button>
+                <button class="btn btn-light" onclick="playTrack(22)">We Will Rise Again (Reinterpretation) - Hammock</button>
+                <button class="btn btn-light" onclick="playTrack(53)">Let the Water Wash Away Your Sins (Reinterpretation) - Hammock</button>
+                <button class="btn btn-light" onclick="playTrack(55)">Now He's Our Father (Reinterpretation) - Hammock</button>
+                <button class="btn btn-light" onclick="playTrack(61)">Oh the Bliss (Reinterpretation) - Hammock</button>
+                <button class="btn btn-light" onclick="playTrack(62)">Help Me Faith (Reinterpretation) - Hammock</button>
+            </div>
+            <br /><button type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#Music9-2-2">约瑟夫.席德(圣父)</button>
+            <div id="Music9-2-2" class="collapse"><br />
+                <button class="btn btn-light" onclick="playTrack(20)">Now That This Old World Is Ending - Dan Romer</button>
+                <button class="btn btn-light" onclick="playTrack(21)">When the Morning Light Shines In - Dan Romer</button>
+            </div>
+            <br /><button type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#Music9-2-3">雅各.席德(战士)</button>
+            <div id="Music9-2-3" class="collapse"><br />
+                <button class="btn btn-light" onclick="playTrack(63)">We Will Rise Again - Dan Romer,Gregory And The Hawk</button>
+                <button class="btn btn-light" onclick="playTrack(64)">Help Me Faith - Dan Romer,Madi Diaz</button>
+            </div>
+        </div>
+    </div>
+        <br />
         <div id="Music9-3" class="collapse"><br />
-        <button class="btn btn-light" onclick="playTrack(28)">Far Cry 3 - Brian Tyler</button>
-        <button class="btn btn-light" onclick="playTrack(56)">Further - Brian Tyler,Serena McKinney</button>
-        <button class="btn btn-light" onclick="playTrack(57)">Falling Into a Dream - Brian Tyler</button>
-        <button class="btn btn-light" onclick="playTrack(58)">Path of the Warrior - Brian Tyler</button>
-        <button class="btn btn-light" onclick="playTrack(59)">Rook Island - Brian Tyler</button></div></div>
-            <!--The Room-->
+            <button class="btn btn-light" onclick="playTrack(28)">Far Cry 3 - Brian Tyler</button>
+            <button class="btn btn-light" onclick="playTrack(56)">Further - Brian Tyler,Serena McKinney</button>
+            <button class="btn btn-light" onclick="playTrack(57)">Falling Into a Dream - Brian Tyler</button>
+            <button class="btn btn-light" onclick="playTrack(58)">Path of the Warrior - Brian Tyler</button>
+            <button class="btn btn-light" onclick="playTrack(59)">Rook Island - Brian Tyler</button>
+        </div>
+        <!--The Room-->
         <div id="Music10" class="collapse text-center"><br />
-        <h3><a href="https://store.steampowered.com/app/288160/The_Room/">一代 Steam官网</a></h3>
-        <button class="btn btn-light" onclick="playTrack(16)">The Room Theme - The Room原声带</button>
-        <button class="btn btn-light" onclick="playTrack(33)">Omega Agent Theme - The Room原声带</button>
-        <button class="btn btn-light" onclick="playTrack(34)">The Room Three Midnight at GreyHolm - The Room原声带</button></div>
-            <!--Alan Wake 2-->
+            <h3><a href="https://store.steampowered.com/app/288160/The_Room/">一代 Steam官网</a></h3>
+            <button class="btn btn-light" onclick="playTrack(16)">The Room Theme - The Room原声带</button>
+            <button class="btn btn-light" onclick="playTrack(33)">Omega Agent Theme - The Room原声带</button>
+            <button class="btn btn-light" onclick="playTrack(34)">The Room Three Midnight at GreyHolm - The Room原声带</button>
+        </div>
+        <!--Alan Wake 2-->
         <div id="Music11" class="collapse text-center"><br />
-        <h3><a href="https://store.epicgames.com/zh-CN/p/alan-wake-2">Epic官网</a></h3>
-        <button class="btn btn-light" onclick="playTrack(15)">Follow You Into The Dark - Alan Wake 2</button>
-        <button class="btn btn-light" onclick="playTrack(35)">Wide Awake - Alan Wake 2</button></div>
-            <!--COD-->
+            <h3><a href="https://store.epicgames.com/zh-CN/p/alan-wake-2">Epic官网</a></h3>
+            <button class="btn btn-light" onclick="playTrack(15)">Follow You Into The Dark - Alan Wake 2</button>
+            <button class="btn btn-light" onclick="playTrack(35)">Wide Awake - Alan Wake 2</button>
+        </div>
+        <!--COD-->
         <div id="Music12" class="collapse text-center"><br />
-        <h3><a href="https://store.steampowered.com/app/1938090/_/">COD战区|19|20|21 Steam官网</a></h3>
-        <button class="btn btn-light" onclick="playTrack(19)">Rising Tide - Jack Wall</button>
-        <button class="btn btn-light" onclick="playTrack(54)">Modern Warfare II - Sarah Schachner</button></div>
-            <!--蜡烛人-->
+            <h3><a href="https://store.steampowered.com/app/1938090/_/">COD战区|19|20|21 Steam官网</a></h3>
+            <button class="btn btn-light" onclick="playTrack(19)">Rising Tide - Jack Wall</button>
+            <button class="btn btn-light" onclick="playTrack(54)">Modern Warfare II - Sarah Schachner</button>
+        </div>
+        <!--蜡烛人-->
         <div id="Music13" class="collapse text-center"><br />
-        <h3><a href="https://store.steampowered.com/app/591630?snr=5000_5100___primarylinks">Steam官网</a></h3>
-        <button class="btn btn-light" onclick="playTrack(23)">摇曳 - Zeta</button></div>
-            <!--地铁离去-->
+            <h3><a href="https://store.steampowered.com/app/591630?snr=5000_5100___primarylinks">Steam官网</a></h3>
+            <button class="btn btn-light" onclick="playTrack(23)">摇曳 - Zeta</button>
+        </div>
+        <!--地铁离去-->
         <div id="Music14" class="collapse text-center"><br />
-        <h3><a href="https://store.steampowered.com/app/412020/Metro_Exodus/">Steam官网</a></h3>
-        <button class="btn btn-light" onclick="playTrack(24)">Race Against Fate (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
-        <button class="btn btn-light" onclick="playTrack(48)">A New Home (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
-        <button class="btn btn-light" onclick="playTrack(39)">Dawn of Hope (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
-        <button class="btn btn-light" onclick="playTrack(44)">Overture (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button></div>
-            <!--THE　FINALS-->
+            <h3><a href="https://store.steampowered.com/app/412020/Metro_Exodus/">Steam官网</a></h3>
+            <button class="btn btn-light" onclick="playTrack(24)">Race Against Fate (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
+            <button class="btn btn-light" onclick="playTrack(48)">A New Home (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
+            <button class="btn btn-light" onclick="playTrack(39)">Dawn of Hope (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
+            <button class="btn btn-light" onclick="playTrack(44)">Overture (feat. Alexey Omelchuk) - Metro Exodus,Alexey Omelchuk</button>
+        </div>
+        <!--THE　FINALS-->
         <div id="Music15" class="collapse text-center"><br />
-        <h3><a href="https://store.steampowered.com/app/2073850/THE_FINALS/">Steam官网</a></h3>
-        <button class="btn btn-light" onclick="playTrack(29)">Transcending Realities - Embark Studios,Sailor & I</button>
-        <button class="btn btn-light" onclick="playTrack(30)">THE FINALS - Embark Studios,Sailor & I</button>
-        <button class="btn btn-light" onclick="playTrack(31)">大舞台への一歩 - A Step to the Big Stage - Embark Studios</button>
-        <button class="btn btn-light" onclick="playTrack(32)">Eternal Petals In the Wind - Embark Studios</button></div>
+            <h3><a href="https://store.steampowered.com/app/2073850/THE_FINALS/">Steam官网</a></h3>
+            <button class="btn btn-light" onclick="playTrack(29)">Transcending Realities - Embark Studios,Sailor & I</button>
+            <button class="btn btn-light" onclick="playTrack(30)">THE FINALS - Embark Studios,Sailor & I</button>
+            <button class="btn btn-light" onclick="playTrack(31)">大舞台への一歩 - A Step to the Big Stage - Embark Studios</button>
+            <button class="btn btn-light" onclick="playTrack(32)">Eternal Petals In the Wind - Embark Studios</button>
+        </div>
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
         const tracks = [
@@ -398,7 +438,7 @@
             'http://music.163.com/song/media/outer/url?id=472045266.mp3',
             //Poznan - Low Roar
             'http://music.163.com/song/media/outer/url?id=472045275.mp3',
-            //Sing To Me - Missio,Death Stranding: Timefall 
+            //Sing To Me - Missio,Death Stranding: Timefall
             'https://freetyst.nf.migu.cn/public/product5th/product35/2019/11/1315/2019%E5%B9%B411%E6%9C%8807%E6%97%A511%E7%82%B948%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY17%E9%A6%96815811/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_128_16_Stero/6005971JTRC.mp3?channelid=02&msisdn=d02eca53-ac71-4c27-9e1c-66c93ca18ec2&Tim=1716393515684&Key=e4eb157a85819eb1',
             //Trigger - Major Lazer,Khalid,Death Stranding: Timefall
             'https://freetyst.nf.migu.cn/public/product5th/product35/2019/11/1418/2019%E5%B9%B411%E6%9C%8807%E6%97%A511%E7%82%B946%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY4%E9%A6%96546595/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_128_16_Stero/6005971JTQB.mp3?channelid=02&msisdn=0b55125c-f4f9-4299-b5eb-8528c32fb625&Tim=1716393496799&Key=d061df0877884d60',
@@ -444,8 +484,8 @@
             'http://music.163.com/song/media/outer/url?id=1464841854.mp3',
         ];
     function playTrack(index) {
-    audioPlayer.src = tracks[index];
-    audioPlayer.play();
+        audioPlayer.src = tracks[index];
+        audioPlayer.play();
     }
     </script>
     <p>
@@ -478,415 +518,501 @@
     tr:hover {
         background-color: #ddd;
     }
-    body
-    {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(0deg, #cfd9df, #e2ebf0);
-    background-attachment: fixed;
-    height: 3000px;
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(0deg, #cfd9df, #e2ebf0);
+        background-attachment: fixed;
     }
     a{text-decoration: none;color:#1878d7;}
     a:hover{color:#135494;}
     p,h1,h2,h3,h4{text-align: left;margin-left: 200px;}
     audio {
-    width: 100%;
-    margin: 20px auto;
-    display: block;
-    background-color: #f1f3f4;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin: 20px auto;
+        display: block;
+        background-color: #f1f3f4;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     audio::-webkit-media-controls-panel {
-    background-color: #f1f3f4;
-    border-radius: 10px;
+        background-color: #f1f3f4;
+        border-radius: 10px;
     }
     audio::-webkit-media-controls-play-button,
     audio::-webkit-media-controls-mute-button {
-    background-color: #4CAF50;
-    border-radius: 50%;
+        background-color: #4CAF50;
+        border-radius: 50%;
     }
     audio::-webkit-media-controls-timeline,
     audio::-webkit-media-controls-volume-slider {
-    background-color: #ddd;
-    border-radius: 15px;
+        background-color: #ddd;
+        border-radius: 15px;
     }
     audio::-webkit-media-controls-current-time-display,
     audio::-webkit-media-controls-time-remaining-display {
-    color: #333;
-    font-size: 15px;
+        color: #333;
+        font-size: 15px;
     }
     .left-aligned {
-    text-align: left;
-    margin-left: 0px;
+        text-align: left;
+        margin-left: 0px;
     }
     #currentTime {font-size: 2em;text-align: center;margin-top: 20px;}
     .music-player {
-    position: fixed;
-    bottom: -100px; /* 初始位置在视图外 */
-    left: 0;
-    right: 0;
-    background-color: #fff; /* 可以设置背景颜色 */
-    padding: 10px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-    transition: bottom 0.3s; /* 平滑过渡效果 */
-}
-.show {
-    bottom: 0; /* 鼠标悬停时显示 */
-}
-    </style>
-        <script>
-            document.addEventListener('mousemove', function(event) {
-    const player = document.getElementById('music-player');
-    const windowHeight = window.innerHeight;
-
-    if (event.clientY > windowHeight - 90) { // 鼠标接近底部50px时
-        player.classList.add('show');
-    } else {
-        player.classList.remove('show');
+        position: fixed;
+        bottom: -110px; /* 初始位置在视图外 */
+        left: 0;
+        right: 0;
+        background-color: #fff; /* 可以设置背景颜色 */
+        padding: 10px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        transition: bottom 0.3s; /* 平滑过渡效果 */
     }
-});
-            function updateTime() {
+    .show {
+        bottom: 0; /* 鼠标悬停时显示 */
+    }
+    </style>
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            const player = document.getElementById('music-player');
+            const windowHeight = window.innerHeight;
+
+            if (event.clientY > windowHeight - 90) { // 鼠标接近底部50px时
+                player.classList.add('show');
+            } else {
+                player.classList.remove('show');
+            }
+        });
+        function updateTime() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('zh-CN', { hour12: false });
-            document.getElementById('currentTime').textContent = timeString;}
-            updateTime();
-            setInterval(updateTime, 1000);
-            function showContent(contentId) {
-        // 隐藏所有内容
+            document.getElementById('currentTime').textContent = timeString;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+        function showContent(contentId) {
+            // 隐藏所有内容
             var contents = document.querySelectorAll('.content');
             contents.forEach(function(content) {
-            content.classList.remove('active');
-        });
-        // 显示选中的内容
-            var selectedContent = document.getElementById(contentId);
-            selectedContent.classList.add('active');
-    }
-    </script>
-    <div id="content1" class="content active">
-    <h2><br />欢迎来到LANREN的Steamtools教程！<small><br />HTML编写：懒人<br />最后更新：2024年9月17日22时51分40秒<br />版本号：V2.3 Demo</small></h2><br />
-    <h2>LANREN tools教程：<small><br />不定时更新：<a href="https://wwyk.lanzoue.com/b00rnb60ti">蓝奏云下载</a><br />密码:etzn</small></h2><br />
-    <h3><span style="color:red"><b>注意：请不要入库《黑神话：悟空》请支持国产之光<br />使用Steamtools不会导致封号</b></span></h3></div>
-    <div id="content2" class="content">
+                content.classList.remove('active');
+            });
+
+    // 显示选中的内容
+var selectedContent = document.getElementById(contentId);
+selectedContent.classList.add('active');
+}
+</script>
+<div id="content1" class="content active">
+    <h2><br />欢迎来到LANREN的Steamtools教程增强版！<small><br />HTML编写：懒人,wangxianming-code<br />最后更新：2024年9月17日22时51分40秒<br />版本号：V1.0.0-O2.3D</small></h2><br />
+    <h2>LANREN tools教程增强版：<small><br />不定时更新：<a href="https://jsdelivr.pai233.top/gh/muwenyan521/LANREN-ToolsTutorial-Extended@main/index.html">下载</a><br /></small></h2><br />
+    <h3><span style="color:red"><b>注意：请不要入库《黑神话：悟空》请支持国产之光<br />使用Steamtools不会导致封号</b></span></h3>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>
+<div id="content2" class="content">
     <h1>Steam</h1>
     <h4><b><a href="https://store.steampowered.com/">Steam官网</a></b><br />
-    <b><a href="https://media.cdn.queniuqe.com/client/installer/SteamSetup.exe">点我快速安装Steam安装包</b></a><br />
+    <b><a href="https://media.cdn.queniuqe.com/client/installer/SteamSetup.exe">下载Steam安装包</b></a><br />
     <b><a href="https://steamdb.info/">SteamDB</a></b></h4><br />
     <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steam安装教程">Steam安装教程</button>
     <div id="Steam安装教程" class="collapse"><br />
-    <p>1.打开<b>Steam官网</b></p>
-    <p>2.点击<b>右上角“安装Steam”</b></p>
-    <p>3.点击<b>“安装 STEAM”</b></p>
-    <p>4.使用您的下载软件下载</p>
-    <p>5.等待下载完成</p>
-    <p>6.打开<b>“SteamSetup.exe”</b></p>
-    <p>7.点击<b>“下一步”</b></p>
-    <p>8.点击<b>“下一步”</b></p>
-    <p>9.选择<b>安装路径（不能有字符串）</b></p>
-    <p>10.点击<b>“安装”</b></p></div>
-    <br /><br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steam账号注册教程">Steam账号注册教程</button>
-    <div id="Steam账号注册教程" class="collapse"><br />
-    <p>1.打开<b>Steam官网</b></p>
-    <p>2.点击<b><mark>右上角</mark>“登录”</b></p>
-    <p>3.点击<b><mark>“创建账户”</mark></b></p>
-    <p>4.第一栏<b>输入您的电子邮箱（如qq.com）</b></p>
-    <p>5.第二栏<b>输入您第一栏输入的电子邮箱</b></p>
-    <p>6.<b><mark>选择地区</mark></b></p>
-    <p>7.<b>点击<mark>进行人机验证</mark></b></p>
-    <p>8.请根据提示做完验证</p>
-    <p>9.点击<b>“我已年满 13 周岁并同意《Steam 订户协议》和《Valve 隐私政策》的条款。”</b></p>
-    <p>10.点击<b>“继续”</b></p>
-    <p>11.请到根据您填的邮箱到邮箱里确认注册Steam</p>
-    <p>12.第一栏<b>输入并创建您的Steam名称（注：这个名称关系到账号登录）</b></p>
-    <p>13.第二栏和第三栏<b>输入您的密码</b></p>
-    <p>14.点击<b>“完成”</b></p>
-    <p>15.等待创建您的Steam账户</p></div>
+        <p>1. 打开<b>Steam官网</b></p>
+        <p>2. 点击右上角的<b>“安装Steam”</b>按钮</p>
+        <p>3. 点击页面中的<b>“安装 STEAM”</b>按钮以开始下载</p>
+        <p>4. 使用您的下载软件下载<b>Steam安装程序</b></p>
+        <p>5. 等待下载完成，这可能需要几分钟时间</p>
+        <p>6. 下载完成后，打开位于下载文件夹的<b>“SteamSetup.exe”</b>文件</p>
+        <p>7. 在安装向导中，点击<b>“下一步”</b>继续</p>
+        <p>8. 再次点击<b>“下一步”</b>，并仔细阅读许可协议后继续</p>
+        <p>9. 选择一个没有特殊字符的文件夹作为安装路径，例如<b>C:\Program Files\Steam</b></p>
+        <p>10. 点击<b>“安装”</b>按钮开始安装Steam，安装过程可能需要一些时间，请耐心等待</p>
     </div>
-    <div id="content3" class="content">
+    <br /><br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steam账号注册教程">Steam账号注册教程</button>
+    <div id="Steam账号注册教程" class="collapse"><br />
+        <p>1. 打开<b>Steam官网</b></p>
+        <p>2. 点击<b><mark>右上角</mark>“登录”</b>按钮</p>
+        <p>3. 在登录页面中，点击<b><mark>“创建账户”</mark></b></p>
+        <p>4. 在第一栏中<b>输入您的电子邮箱地址（例如：example@qq.com）</b></p>
+        <p>5. 在第二栏中<b>再次输入您的电子邮箱地址以确认</b></p>
+        <p>6. <b><mark>选择您的地区</mark></b></p>
+        <p>7. <b>点击<mark>进行人机验证</mark></b>并按照提示完成验证</b></p>
+        <p>8. 请根据提示完成验证</p>
+        <p>9. 点击<b>“我已年满 13 周岁并同意《Steam 订户协议》和《Valve 隐私政策》的条款。”</b>以接受协议</p>
+        <p>10. 点击<b>“继续”</b>进入下一步</p>
+        <p>11. 请检查您提供的电子邮箱，点击邮件中的链接以确认注册Steam</p>
+        <p>12. 在第一栏中<b>输入并创建您的Steam用户名（注：这个名称关系到账号登录）</b></p>
+        <p>13. 在第二栏和第三栏中<b>分别输入您的密码，并再次确认密码</b></p>
+        <p>14. 点击<b>“完成”</b>以完成注册流程</p>
+        <p>15. 等待系统创建您的Steam账户</p>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>
+<div id="content3" class="content">
     <h1>Steamtools</h1>
-    <h4><b><a href="https://steamtools.net/">跳转到Steamtools官方网站</a><br /></b>
-    <a href="https://github.com/ikunshare/Onekey"><b>跳转到Onekey的GitHub仓库</b></a><br />
-    <a href="https://steamtools.net/res/SteamtoolsSetup.exe"><b>立即下载Steamtools</b></a><br /></h4><br />
+    <h4><b><a href="https://steamtools.net/">Steamtools官方网站</a><br /></b>
+    <a href="https://github.com/ikunshare/Onekey"><b>Onekey的GitHub仓库</b></a><br />
+    <a href="https://steamtools.net/res/SteamtoolsSetup.exe"><b>立即下载Steamtools安装程序</b></a><br />
+    <a href="https://github.com/ikunshare/Game-Uninstaller"><b>Game-Uninstaller的GitHub仓库</b></a><br /></h4><br />
     <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools安装教程">Steamtools安装教程</button>
     <div id="Steamtools安装教程" class="collapse"><br />
-    <p>1.点击按钮<b>“立即下载Steamtools”</b></p>
-    <p>2.打开<b>Steam</b></p>
-    <p>3.打开<b>“SteamtoolsSetup.exe”</b></p>
-    <p>4.<b>按回车键</b>退出安装程序</p>
+        <p>1. 点击按钮<b>“立即下载Steamtools安装程序”</b>开始下载</p>
+        <p>2. 打开<b>Steam客户端</b></p>
+        <p>3. 下载完成后，打开下载文件夹，找到并双击<b>“SteamtoolsSetup.exe”</b>文件开始安装</p>
+        <p>4. 安装完成后，<b>按回车键</b>退出安装程序</p>
     </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools使用教程">Steamtools使用教程</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools使用教程">Steamtools使用教程</button>
     <div id="Steamtools使用教程" class="collapse"><br />
         <button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#清单伪入库">清单伪入库</button>
         <div id="清单伪入库" class="collapse"><br />
-    <p>1.打开<b>Steamtools</b></p>
-    <p>2.把<b>清单文件<mark>全部拖入Steamtools</mark></b></p>
-    <p>3.<b>重启Steam</b></p></div><br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#工具伪入库">工具伪入库</button>
-    <div id="工具伪入库" class="collapse"><br />
-    <h4>OneKey：</h4>
-    <p>1.<b>下载Onekey</b></p>
-    <p>2.打开<b>Onekey</b></p>
-    <p>3.输入游戏的<b><mark>AppID</mark>或游戏名称</b>（1.1.3以上到1.1.7以下才支持输入游戏名称）</p>
-    <p>4.<b><mark>选择游戏的编号（指输入后显示出来的游戏前面的序号）</mark></b>（此步骤仅次于1.1.3以上到1.1.7以下的版本）</p>
-    <p>5.打开<b>Steamtools</b></p>
-    <p>6.<b>重启Steam</b></p></div><br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#游戏账号伪入库">游戏账号伪入库</button>
-    <div id="游戏账号伪入库" class="collapse"><br />
-    <p>1.<b>登录</b>拥有需要解锁的游戏的账号</p>
-    <p>2.<b>下载游戏</b></p>
-    <p>3.把<b>库中的游戏拖入到Steamtools悬浮窗</b></p>
-    <p>4.<b>重启Steam</b>并<b>登录自己的Steam账号</b></p></div><br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#正版分流伪入库">正版分流伪入库</button>
-    <div id="正版分流伪入库" class="collapse"><br />
-    <p>1.下载游戏的<b>正版分流</b></p>
-    <p>2.打开<b>Steam</b></p>
-    <p>3.找到<b>游戏的AppID</b>并<b>向Steamtoools悬浮窗<mark>拖入AppID</mark></b></p>
-    <p>4.重启<b>Steam</b></p>
-    <p>5.下载入库游戏的<b>空包</b></p>
-    <p>6.找到<b>空包的根目录把游戏根目录</b>放进去</p></div><br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#取消伪入库">取消伪入库</button>
-    <div id="取消伪入库" class="collapse">
-        <button style="margin-left: 200px;" type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#方法一">方法一</button>
-    <div id="方法一" class="collapse"><br />
-    <p>1.打开<b>Steamtools</b></p>
-    <p>2.找到<b>游戏的AppID</b></p>
-    <p>3.<b><mark>按住Ctrl</mark>把AppID拖入Steamtools悬浮窗</b></p>
-    <p>4.<b>重启Steam</b></p></div>
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#方法二">方法二</button>
-    <div id="方法二" class="collapse"><br />
-    <p>1.打开<b><mark>盘:\Steam\config\stplug-in</mark></b></p>
-    <p>2.找到<mark>需要取消解锁的<b>游戏的AppID，删除文件</mark></b></p>
-    <p>3.<b>重启Steam</b></p></div></div></div></div></div>
-    
-    <div id="content4" class="content">
+            <p>1. 打开<b>Steamtools</b></p>
+            <p>2. 将<b><mark>清单文件</mark></b>全部拖入<b>Steamtools</b>悬浮窗</p>
+            <p>3. <b>重启Steam客户端</b></p>
+        </div>
+        <br />
+        <br />
+        <button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#工具伪入库">工具伪入库</button>
+        <div id="工具伪入库" class="collapse"><br />
+            <h4>OneKey使用指南：</h4>
+            <p>1. <b>下载Onekey</b>并保存到您的计算机上</p>
+            <p>2. 找到下载的文件，<b>打开Onekey应用程序</b></p>
+            <p>3. 在搜索框中，<b>输入游戏的<mark>AppID</mark>或游戏名称</mark></b>（请注意，只有1.1.3以上到1.1.7以下的版本支持输入游戏名称）</p>
+            <p>4. <b><mark>选择游戏的编号</mark></b>（即搜索结果中游戏前面的序号）</mark>（此步骤仅适用于1.1.3以上到1.1.7以下的版本）</p>
+            <p>5. 切换到<b>Steamtools</b>并打开它</p>
+            <p>6. 请<b>重启Steam客户端</b></p>
+        </div>
+        <br />
+        <br />
+        <button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#游戏账号伪入库">游戏账号伪入库</button>
+        <div id="游戏账号伪入库" class="collapse"><br />
+            <p>1. <b>登录</b>拥有需要解锁的游戏的账号</p>
+            <p>2. <b>下载游戏</b>到您的库中</p>
+            <p>3. 在下载完成后，<b>启动游戏</b>一次（不要太久）</p>
+            <p>4. 将<b>库中的游戏</b>拖入到<b>Steamtools悬浮窗</b></p>
+            <p>5. <b>重启Steam</b>并<b>登录自己的Steam账号</b>以应用更改</p>
+        </div>
+        <br />
+        <br />
+        <button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#正版分流伪入库">正版分流伪入库</button>
+        <div id="正版分流伪入库" class="collapse"><br />
+            <p>1. 下载游戏的<b>正版分流</b>版本</p>
+            <p>2. 打开您的<b>Steam客户端</b></p>
+            <p>3. 在Steam中找到游戏的<b>AppID</b>，然后将其<b>拖入Steamtoools悬浮窗</b>中</p>
+            <p>4. 完成拖入后，<b>重启Steam客户端</b></p>
+            <p>5. 接着，下载游戏的<b>空包</b></p>
+            <p>6. 找到<b>空包的根目录</b>并将<b>游戏根目录</b>的内容放进去</p>
+        </div>
+        <br />
+        <br />
+        <button style="margin-left: 200px;" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#取消伪入库">取消伪入库</button>
+        <div id="取消伪入库" class="collapse">
+            <button style="margin-left: 200px;" type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#方法一">方法一</button>
+            <div id="方法一" class="collapse"><br />
+                <p>1. 打开<b>Steamtools</b>应用程序</p>
+                <p>2. 在Steam客户端中找到<b>游戏的AppID</b></p>
+                <p>3. <b>按住Ctrl键</b>，然后将<b><mark>AppID</mark></b>拖入<b>Steamtools悬浮窗</b></p>
+                <p>4. 完成拖入操作后，<b>重启Steam客户端</b>以应用更改</p>
+            </div>
+            <br />
+            <button style="margin-left: 200px;" type="button" class="btn btn-outline-light text-dark" data-bs-toggle="collapse" data-bs-target="#方法二">方法二</button>
+            <div id="方法二" class="collapse"><br />
+                <p>1. 打开文件夹路径：<b><mark>盘符:\Steam\config\stplug-in</mark></b></p>
+                <p>2. 在该文件夹中找到<mark>需要取消解锁的<b>游戏的AppID</b>对应的文件，并将其删除</mark></p>
+                <p>3. 完成删除后，<b>重启Steam客户端</b>以应用更改</p>
+            </div>
+            <div id="方法三" class="collapse"><br />
+                <p>1. 下载并安装<b>Game-Uninstaller</b>工具</p>
+                <p>2. 在Game-Uninstaller中找到要取消伪入库游戏的<b>AppID</b></p>
+                <p>3. 找到对应的AppID后，点击下方的<b>删除(Delete)</b>按钮</p>
+                <p>4. 完成删除操作后，<b>重启Steam客户端</b>以应用更改</p>
+            </div>
+        </div>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>
+<div id="content4" class="content">
     <h1>SteamLoader</h1>
     <h4><b><a href="https://www.123pan.com/s/toMujv-2Idu3.html">123云盘下载（感谢来自菜Games的分享）</b></a><br />
     <b><a href="https://wwyk.lanzoue.com/iQbH128mmg6h">蓝奏云下载</b></a></h4>
-    <br /><br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#J">解D加密&无D加密跳过Steam启动</button>
+    <br /><br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#J">解D加密&无D加密跳过Steam启动</button>
     <div id="J" class="collapse"><br />
-    <p>1.前往<b><mark>下载SteamLoader</mark></b></p>
-    <p>2.找到<b>要<mark>解D加密的游戏</mark></b></p>
-    <p>3.登录<b><mark>有这个游戏的Steam账号</mark></b></p>
-    <p>4.<b>打开一次游戏</b></p>
-    <p>5.点击游戏图片<b>旁边的小齿轮（设置）</b></p>
-    <p>6.点击<b>“管理”里面的“浏览本地文件”</b></p>
-    <p>7.把下载的<b>SteamLoader解压到游戏主启动程序所在位置</b></p>
-    <p>8.打开SteamLoader的文件<b><mark>“ColdClientLoader.ini”</mark></b></p>
-    <p>9.在<b>第三行的“Ese=”旁边改成你游戏的启动主程序</b></p>
-    <p>10.保存</p>
-    <p>11.打开SteamLoader的文件夹<b>“steam_settings”</b></p>
-    <p>12.打开<b><mark>“force_steamid.txt”</mark></b></p>
-    <p>13.这里<b>输入刚才你启动游戏的账号ID</b></p>
-    <p>14.保存</p>
-    <p>15.打开<b>“dlc.txt”</b></p>
-    <p>16.<b>输入你要解锁的DLC（格式是：<mark>AppID=DLC名称</mark>）</b></p>
-    <p>17.保存</p>
-    <p>18.返回<b>启动主程序的文件夹位置</b></p>
-    <p>19.点击<b><mark>“steamclient_loader.exe”启动游戏</mark></b></p></div></div>
-    
-    <div id="content5" class="content">
+        <p>1. 前往<b><mark>下载SteamLoader</mark></b></p>
+        <p>2. 在Steam中找到<b>要解D加密的游戏</b></p>
+        <p>3. 使用<b><mark>拥有该游戏的Steam账号</mark></b>登录</p>
+        <p>4. <b>打开游戏</b>一次，确保游戏可以正常运行</p>
+        <p>5. 在Steam库中，点击游戏图片<b>旁边的小齿轮（设置）</b></p>
+        <p>6. 在设置菜单中，点击<b>“管理”</b>里面的<b>“浏览本地文件”</b></p>
+        <p>7. 将下载的<b>SteamLoader</b>解压到<b>游戏主启动程序所在位置</b></p>
+        <p>8. 打开SteamLoader的配置文件<b><mark>“ColdClientLoader.ini”</mark></b></p>
+        <p>9. 在<b>第三行的“Ese=”</b>旁边改成<b>你游戏的启动主程序</b></p>
+        <p>10. 完成修改后，<b>保存</b>文件</p>
+        <p>11. 打开SteamLoader的文件夹<b>“steam_settings”</b></p>
+        <p>12. 打开配置文件<b><mark>“force_steamid.txt”</mark></b></p>
+        <p>13. 在文件中<b>输入刚才你启动游戏的账号ID</b></p>
+        <p>14. 完成输入后，<b>保存</b>文件</p>
+        <p>15. 打开配置文件<b>“dlc.txt”</b></p>
+        <p>16. 在文件中<b>输入你要解锁的DLC（格式是：<mark>AppID=DLC名称</mark>）</b></p>
+        <p>17. 完成输入后，<b>保存</b>文件</p>
+        <p>18. 返回到<b>启动主程序的文件夹位置</b></p>
+        <p>19. 点击<b><mark>“steamclient_loader.exe”</mark></b>启动游戏</p>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>
+<div id="content5" class="content">
     <h1>Steamless</h1>
     <h4><a href="https://github.com/atom0s/Steamless/releases"><b>跳转到Steamless的GitHub仓库</b></a><br />
     <a href="https://wwk.lanzoul.com/iFmHD1mvjxah"><b>蓝奏云下载Steamless(分流)</b></a></h4>
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamless安装">Steamless安装</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamless安装">Steamless安装</button>
     <div id="Steamless安装" class="collapse"><br />
-    <p>1.<b>下载Steamless</b></p>
-    <p>2.<b>解压</b>到任意目录</p></div><br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamless使用教程">Steamless使用教程</button>
-    <div id="Steamless使用教程" class="collapse"><br />
-    <br /><h4>方法一：</h4>
-    <p>1.打开<b>“<mark>Steamless.exe</mark>”</b></p>
-    <p>2.<b>将游戏主程序exe文件<mark>拖入“Select File To Unpack”</mark></b></p>
-    <p>3.<b>点击Unpack File</b></p>
-    <p>4.<b>成功后会生成一个新的exe游戏启动文件，把原文件删除，把刚新生成的exe启动程序改成游戏原名字</b></p>
-    <h4>方法二：</h4>
-    <p>1.将<b>将游戏主程序exe文件拖入<mark>“Steamless.CLI.exe”</mark></b></p>
-    <p>2.<b>成功后会生成一个新的exe游戏启动文件，把原文件删除，把刚新生成的exe启动程序改成游戏原名字</b></p>
-    </div></div>
-    <div id="content6" class="content">
-    <h1>Steamtools问题疑难解答</h1>
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools1">问题：无法解锁/下载游戏</button>
-    <div id="Steamtools1" class="collapse"><br />
-    <b><p>解答一：<mark>重装Steam和Steamtools</mark></p>
-    <p>解答二：关闭Steamtools的“解锁Steam方案”中的<mark>“禁止游戏更新”</mark></p>
-    <p>解答三：第三方验证（如育碧，R星，EA 或D加密）</p>
-    <p>解答四：打开Steam重新安装Steamtools</p>
-    <p>解答五：把Steam设置里的测试版退成正式版</p>
-    <p>解答六：关闭微型小飞机</p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools2">问题：从哪里找游戏的清单？</button>
-    <div id="Steamtools2" class="collapse"><br />
-    <b><p>解答一：从<a href="https://bbs.steamtools.net/">Steamtools论坛</a>里找</p>
-    <p>解答二：从<a href="https://ikunshare.com/">iKun论坛</a>里找</p>
-    <p>解答三：从<a href="https://bbs.sttls.cn/">STTLS论坛</a>里找</p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools3">问题：下载游戏时“<mark>内容配置文件不可用</mark>”“<mark>此内容仍然处于加密状态</mark>”“<mark>无互联网连接</mark>”“<mark>清单不可用</mark>”“<mark>无法连接内容到服务器</mark>”“<mark>网络不可用</mark>”</button>
-    <div id="Steamtools3" class="collapse"><br />
-    <b><p>解答一：网络问题</p>
-    <p>解答二：先显示“<mark>此内容仍然处于加密状态</mark>”或“<mark>内容配置文件不可用</mark>”，后显示“<mark>无互联网连接</mark>”“<mark>无法连接内容到服务器</mark>”，<mark>要么是D加密要么是清单有问题</mark></p>
-    <p>解答三：“<mark>内容配置文件不可用</mark>”“<mark>清单不可用</mark>”是清单问题</p></b>
+        <p>1. <b>下载Steamless</b>工具</p>
+        <p>2. 将下载的文件<b>解压</b>到您选择的任意目录</p>
     </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools4">问题：显示“请开启解锁模式”</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamless使用教程">Steamless使用教程</button>
+    <div id="Steamless使用教程" class="collapse"><br />
+        <h4>方法一：</h4>
+        <p>1. 打开<b><mark>“Steamless.exe”</mark></b>应用程序</p>
+        <p>2. <b>将游戏主程序exe文件</b><mark>拖入“Select File To Unpack”</mark>区域</p>
+        <p>3. <b>点击“Unpack File”</b>按钮开始解包过程</p>
+        <p>4. <b>成功后会生成一个新的exe游戏启动文件</b>，删除原文件，并将新生成的exe启动程序重命名<b>为游戏原名字</b></p>
+
+        <h4>方法二：</h4>
+        <p>1. <b>将游戏主程序exe文件</b>拖入<b><mark>“Steamless.CLI.exe”</mark></b>应用程序</p>
+        <p>2. <b>成功后会生成一个新的exe游戏启动文件</b>，删除原文件，并将新生成的exe启动程序重命名<b>为游戏原名字</b></p>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br />
+</div>
+<div id="content6" class="content">
+    <h1>Steamtools问题疑难解答</h1>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools1">问题：无法解锁/下载游戏</button>
+    <div id="Steamtools1" class="collapse"><br />
+        <b>
+            <p>解答一：<mark>重装Steam和Steamtools</mark></p>
+            <p>解答二：关闭Steamtools的“解锁Steam方案”中的<mark>“禁止游戏更新”</mark>选项</p>
+            <p>解答三：第三方验证（如育碧，R星，EA 或D加密）</p>
+            <p>解答四：打开Steam，通过Steam界面重新安装Steamtools</p>
+            <p>解答五：在Steam设置中，将测试版切换回正式版</p>
+            <p>解答六：关闭任何运行中的微型小飞机（如Steam Overlay）</p>
+        </b>
+    </div>
+    <br />
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools2">问题：从哪里找游戏的清单？</button>
+    <div id="Steamtools2" class="collapse"><br />
+        <b>
+            <p>解答一：访问<a href="https://bbs.steamtools.net/">Steamtools论坛</a>查找</p>
+            <p>解答二：浏览<a href="https://ikunshare.com/">iKun论坛</a>查找</p>
+            <p>解答三：参考<a href="https://bbs.sttls.cn/">STTLS论坛</a>查找</p>
+        </b>
+    </div>
+    <br />
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools3">问题：下载游戏时“<mark>内容配置文件不可用</mark>”“<mark>此内容仍然处于加密状态</mark>”“<mark>无互联网连接</mark>”“<mark>清单不可用</mark>”“<mark>无法连接内容到服务器</mark>”“<mark>网络不可用</mark>”</button>
+    <div id="Steamtools3" class="collapse"><br />
+        <b>
+            <p>解答一：检查网络连接是否正常</p>
+            <p>解答二：如果先显示“<mark>此内容仍然处于加密状态</mark>”或“<mark>内容配置文件不可用</mark>”，随后显示“<mark>无互联网连接</mark>”或“<mark>无法连接内容到服务器</mark>”，则问题可能出在D加密或清单文件上</p>
+            <p>解答三：“<mark>内容配置文件不可用</mark>”或“<mark>清单不可用</mark>”表明存在清单问题</p>
+        </b>
+    </div>
+    <br />
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools4">问题：显示“请开启解锁模式”</button>
     <div id="Steamtools4" class="collapse"><br />
-    <b><p>解答：右键Steamtools悬浮窗，在<mark>“启动Steam选项”里点击“解锁模式”</mark></p></b></div>
+        <b>
+            <p>解答：右键点击Steamtools的悬浮窗口，在<mark>“启动Steam选项”</mark>菜单中选择<mark>“解锁模式”</mark></p>
+        </b>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools5">问题：怎么查看游戏是否为D加密？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools5">问题：怎么查看游戏是否为D加密？</button>
     <div id="Steamtools5" class="collapse"><br />
-    <b><p>解答：打开Steam游戏的商店界面，下拉如果显示"<mark>第三方 DRM: Denuvo Anti-tamper</mark>"就是D加密</b></p></div>
+        <b>
+            <p>解答：打开Steam游戏的商店界面并下拉，如果页面显示<mark>"第三方 DRM: Denuvo Anti-tamper"</mark>，则表明该游戏采用了D加密</p>
+        </p>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools6">问题：怎么知道游戏对应的AppID？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools6">问题：怎么知道游戏对应的AppID？</button>
     <div id="Steamtools6" class="collapse"><br />
-    <b><p>解答：从Steam商店打开游戏页面上面<mark>链接的app/AppID/就是了(列如:https://store.steampowered.com/app/<i>1017180</i>)</mark></b></p></div>
+        <b>
+            <p>解答：从Steam商店打开游戏页面，上面链接中的<mark>app</mark>或<mark>AppID</mark>就是您要找的（例如：<mark>https://store.steampowered.com/app/</mark><i>1017180</i>）</p>
+        </p>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools7">问题：可以用云存档吗？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools7">问题：可以用云存档吗？</button>
     <div id="Steamtools7" class="collapse"><br />
-    <b><p>解答：<mark>可以</mark></p></b></div>
+        <b>
+            <p>解答：<mark>可以</mark></p>
+        </b>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools8">问题：能联机吗？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools8">问题：能联机吗？</button>
     <div id="Steamtools8" class="collapse"><br />
-    <b><p>解答：《极限竞速：地平线4/极限竞速：地平线5/幻兽帕鲁》这种可以<mark>直接入库玩</mark>，其他游戏支持学习版联机可能要<mark>联机补丁</mark></p></b></div>
+        <b>
+            <p>解答：《极限竞速：地平线4》、《极限竞速：地平线5》和《幻兽帕鲁》这类游戏可以<mark>直接入库并开始游戏</mark>。对于其他游戏，如果需要支持学习版联机，可能需要使用<mark>联机补丁</mark>。</p>
+        </b>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools9">问题：是否能自动更新游戏？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools9">问题：是否能自动更新游戏？</button>
     <div id="Steamtools9" class="collapse"><br />
-    <b><p>解答：<mark>不可以</mark></p></b></div>
+        <b>
+            <p>解答：<mark>不可以</mark></p>
+        </b>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools10">问题：如何更新游戏？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools10">问题：如何更新游戏？</button>
     <div id="Steamtools10" class="collapse"><br />
-    <b><p>解答：<mark>重新入库</mark>一次</p></b></div>
+        <b>
+            <p>解答：<mark>重新入库</mark>一次</p>
+        </b>
+    </div>
     <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools11">问题：游戏删了能重下吗？</button>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools11">问题：游戏删了能重下吗？</button>
     <div id="Steamtools11" class="collapse"><br />
-    <b><p>解答：只要你的游戏清单和游戏解锁插件<mark>还在</mark>就可以重下</p></b></div>
+        <p><b>解答：</b>只要你的游戏清单和游戏解锁插件<mark>仍然存在</mark>，你就可以重新下载游戏。</p></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools12">问题：怎么解锁DLC</button>
     <div id="Steamtools12" class="collapse"><br />
-    <b><p>解答一：把<mark>DLC的AppID拖到Steamtools悬浮窗</mark></p>
-    <p>解答二：利用<mark>游戏清单和解锁插件解锁</mark></p></b></div>
+        <b><p>解答一：将<mark>DLC的AppID</mark>拖放到Steamtools悬浮窗</p></b>
+        <b><p>解答二：利用<mark>游戏清单和解锁插件</mark>进行游戏解锁</p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools13">问题：为什么我的DLC解锁了没有，或是“此内容仍然处于加密状态”“清单不可用”“网络不可用”</button>
     <div id="Steamtools13" class="collapse"><br />
-    <b><p>解答一：<mark>网络</mark>问题</p>
-    <p>解答二：<mark>游戏清单</mark>问题</p>
-    <p>解答三：DLC是<mark>D加密</mark></p>
-    <p>解答四：DLC需要下载（<mark>使用有DLC的Steam共享账号或清单</mark>）</p></b></div>
+        <b><p>解答一：遇到<mark>网络</mark>问题</p></b>
+        <b><p>解答二：遇到<mark>游戏清单</mark>问题</p></b>
+        <b><p>解答三：DLC是<mark>D加密</mark></p></b>
+        <b><p>解答四：DLC需要下载，<mark>使用有DLC的Steam共享账号或清单</mark></p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools14">问题：游戏是D加密怎么办？</button>
     <div id="Steamtools14" class="collapse"><br />
-    <b><p>解答一：先解锁游戏，找到一个拥有此游戏的Steam账户，下载完游戏启动游戏一次，如果成功进入游戏就退出游戏返回自己的账户，右键Steamtools悬浮窗点击Steamtools的<mark>“当前Steam账户”选项的“授权游戏”</mark>，找到游戏对应的AppID进行确认</p>
-    <p>解答二：<mark>购买正版</mark></p>
-    <p>解答三：游玩学习版</p></b></div>
+        <b><p>解答一：首先解锁游戏，找到一个拥有此游戏的Steam账户，下载并完成游戏的一次启动。如果能够成功进入游戏，请退出并返回到自己的Steam账户。接着，右键点击Steamtools悬浮窗，选择Steamtools的<mark>“当前Steam账户”</mark>选项中的<mark>“授权游戏”</mark>。在弹出的列表中找到游戏对应的AppID并进行确认。</p></b>
+        <b><p>解答二：<mark>购买正版</mark>游戏。</p></b>
+        <b><p>解答三：游玩学习版。</p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools15">问题：为什么解锁的游戏没有显示在我的库里？</button>
     <div id="Steamtools15" class="collapse"><br />
-    <b><p>解答：游戏被<mark>隐藏</mark>了</p></b></div>
+        <b><p>解答：游戏被<mark>隐藏</mark>了</p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools16">问题：为什么我的Steam游戏没有成就</button>
     <div id="Steamtools16" class="collapse"><br />
-    <b><p>解答：别人给的游戏清单没有成就（<mark>找到成就文件导入成就</mark>）</p></b></div>
+        <b><p>解答：别人给的游戏清单不含有成就（<mark>找到成就文件导入成就</mark>）</p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools17">问题：游戏成就怎么导入/导出</button>
     <div id="Steamtools17" class="collapse"><br />
-    <b><p>导入：右键Steamtools悬浮窗<mark>右键“当前Steam账户”选项的“管理成就系统”</mark>随便选择导入，然后<mark>选择成就文件导入</mark></p>
-    <p>导出：右键Steamtools悬浮窗<mark>右键“当前Steam账户”选项的“管理成就系统”对应的AppID</mark>选择导出</p></b></div>
+        <b><p>导入成就：右键点击Steamtools悬浮窗，选择<mark>“当前Steam账户”</mark>选项中的<mark>“管理成就系统”</mark>。在弹出的菜单中选择<mark>“导入”</mark>，然后选择你的成就文件进行导入。</p></b>
+        <b><p>导出成就：右键点击Steamtools悬浮窗，选择<mark>“当前Steam账户”</mark>选项中的<mark>“管理成就系统”</mark>对应的AppID。在弹出的菜单中选择<mark>“导出”</mark>以导出你的成就。</p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools18">问题：无法下载创意工坊怎么办？</button>
     <div id="Steamtools18" class="collapse"><br />
-    <b><p>解答一：如果您需要下载的是小红车的壁纸可以<mark>找个共享账号下载游戏再切回原账号</mark></p>
-    <p>解答二：如果是其他游戏是无法直接下载的，伪入库的游戏是不带下载创意工坊的，需要<mark>找个共享账号下载</mark></p></b></div>
+        <b><p>解答一：如果您需要下载的是《Wallpaper Engine》（别名“小红车”），您可以<mark>借用一个拥有该游戏的Steam共享账号下载游戏</mark>，然后再切换回您原来的账号。</p></b>
+        <b><p>解答二：如果是其他游戏，可能无法直接下载，因为伪入库的游戏通常不包括下载创意工坊内容的权限。您将需要<mark>借用一个拥有相应权限的Steam共享账号进行下载</mark>。</p></b></div>
     <br />
     <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Steamtools19">问题：启动游戏显示“<mark>Application load error 6:0000065432</mark>”</button>
     <div id="Steamtools19" class="collapse"><br />
-    <b><p>解答一：游玩学习版</p>
-    <p>解答二：使用Steamless脱壳</p></b></div>
+        <b><p>解答一：游玩学习版</p>
+        <p>解答二：使用Steamless脱壳</p></b></div>
+    <br /><br /><br /><br /><br /><br /><br />
     </div>
     <div id="content7" class="content">
-    <center><h1>Onekey问题疑难解答</h1></center>
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey1">问题：清单下载或生成失败</button>
-    <div id="Onekey1" class="collapse"><br />
-    <b><p>解答一：<mark>游戏没收录</mark>进OneKey里或者<mark>游戏不存在</mark></p>
-    <p>解答二：未知原因导致无法下载，<mark>重启解决</mark></p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey2">问题：Onekey---V1.1.7闪退</button>
-    <div id="Onekey2" class="collapse"><br />
-    <b><p>解答一（推荐）：请<mark>升级到Oneke---V1.1.8以上</mark></p>
-    <p>解答二：使用CMD运行Onekey，查看报错信息，根据给的文件路径删除文件</p></b>
+        <center><h1>Onekey问题疑难解答</h1></center>
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey1">问题：清单下载或生成失败</button>
+        <div id="Onekey1" class="collapse"><br />
+            <b><p>解答一：如果遇到问题，可能是因为游戏尚未被<mark>收录进OneKey清单库</mark>，或者您搜索的游戏<mark>不存在</mark>在数据库中。</p></b>
+            <b><p>解答二：如果因未知原因导致无法下载，尝试<mark>重启计算机或相关软件</mark>，这可能有助于解决问题。</p></b></div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey2">问题：Onekey---V1.1.7闪退</button>
+        <div id="Onekey2" class="collapse"><br />
+            <b><p>解答一（推荐）：请确保您使用的是最新版本的OneKey工具，建议<mark>升级到OneKey V1.1.8或以上版本</mark>。</p></b>
+            <b><p>解答二：如果遇到问题，可以尝试使用CMD（命令提示符）运行OneKey，查看程序运行时的报错信息。根据错误信息中提供的文件路径，找到并删除相应的文件。</p></b>
+        </div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey3">问题：按操作入库后0b或没有入库</button>
+        <div id="Onekey3" class="collapse"><br />
+            <b><p>解答一：如果因未知原因导致游戏无法入库，可以尝试<mark>更换OneKey的版本</mark>，可能是当前版本与您的系统或其他软件不兼容。</p></b>
+            <b><p>解答二：请检查是否已开启Steamtools的解锁模式，如果未开启，游戏将无法正常入库。</p></b>
+        </div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey4">问题：发生错误</button>
+        <div id="Onekey4" class="collapse"><br />
+            <b><p>解答一：请确保您没有输入任何<mark>字符串</mark>，包括英文和中文，或者确保已正确输入内容。（注：1.1.3版本以上到1.1.7以下及1.2.4以上版本请忽略此条）</p></b>
+            <b><p>解答二：可能是网络问题导致的失败。请检查您的网络连接。如果网络无问题，可以尝试<mark>加速Github Api</mark>或者<mark>关闭VPN</mark>后再试。</p></b>
+            <b><p>解答三：如果因未知原因导致操作失败，<mark>有时候重启计算机或者相关软件可以解决问题</mark>。</p></b>/div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey5">问题：Onekey---V1.1.3以上解锁步骤操作完后闪退</button>
+        <div id="Onekey5" class="collapse"><br />
+            <b><p>解答：尝试<mark>删除配置文件</mark>（config.json），然后重新打开Onekey应用程序。</p></b></div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey6">问题：未找到Steam路径</button>
+        <div id="Onekey6" class="collapse"><br />
+            <b><p>解答一：请确保您已经<mark>下载并安装了Steam以及Steamtools</mark>。如果尚未安装，请先完成安装步骤。</p></b>
+            <b><p>解答二：如果问题是由于定向锁定某个程序的路径导致发生找不到路径的情况，尝试<mark>重启计算机</mark>或者<mark>重启相关软件</mark>来解决这个问题。</p></b></div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey7">问题：输入AppId后提示443报错</button>
+        <div id="Onekey7" class="collapse"><br />
+            <b><p>解答：请前往Watt Toolkit（原名Steam++）进行设置，挂<mark>GitHub Api代理</mark>验。</p></b></div>
+        <br />
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey8">问题：main.exe报错，显示“<mark>丢失api-ms-win-core-path-l1-1-0.dll</mark>”</button>
+        <div id="Onekey8" class="collapse"><br />
+            <b><p>解答：系统版本过低，需要升级系统。请<mark>更新到Windows 10或更高版本</mark>。</p></b></div>
+        </div>
+        <br /><br /><br /><br /><br /><br /><br />
     </div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey3">问题：按操作入库后0b或没有入库</button>
-    <div id="Onekey3" class="collapse"><br />
-    <b><p>解答一：未知原因导致无法入库，<mark>换Onekey版本</mark></p>
-    <p>解答二：Steamtools解锁模式没开</p></b>
-    </div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey4">问题：发生错误</button>
-    <div id="Onekey4" class="collapse"><br />
-    <b><p>解答一：输入了<mark>字符串</mark>（包括英文中文等）或<mark>未输入内容</mark>（1.1.3版本以上到1.1.7以下请省略这条）</p>
-    <p>解答二：网络问题（如果网络没有问题请<mark>加速Github Api</mark>或者<mark>关闭VPN</mark>）</p>
-    <p>解答三：未知原因（<mark>有时候重启解决</mark>）</p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey5">问题：Onekey---V1.1.3以上解锁步骤操作完后闪退</button>
-    <div id="Onekey5" class="collapse"><br />
-    <b><p>解答：请<mark>删除配置文件</mark>（config.json）再打开</p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey6">问题：未找到Steam路径</button>
-    <div id="Onekey6" class="collapse"><br />
-    <b><p>解答一：<mark>未下载Steam/Steamtools</mark></p>
-    <p>解答二：定向锁定某个程序的路径导致发生找不到路径的情况，<mark>重启解决</mark></p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey7">问题：输入AppId后提示443报错</button>
-    <div id="Onekey7" class="collapse"><br />
-    <b><p>解答：前往Watt Toolkit(Steam++)挂<mark>GitHub Api代理</mark></p></b></div>
-    <br />
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Onekey8">问题：main.exe报错，显示“<mark>丢失api-ms-win-core-path-l1-1-0.dll</mark>”</button>
-    <div id="Onekey8" class="collapse"><br />
-    <b><p>解答：系统版本过低，需要升级系统，请<mark>更新到Windows 10或Windows 10以上版本</mark></p></b></div>
-    </div>
-        <div id="content8" class="content">
-    <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN1">【学习版】下载学习版的网站</button>
-    <div id="LANREN1" class="collapse">
-        <center><table border="1">
-            </div></details>
-        <tr>
-            <th colspan="4">【学习版】下载学习版的网站</th>
-        </tr>
-        <tr>
-            <th>网页名</th>
-            <th>支持平台</th>
-            <th>国内/非国内</th>
-            <th>其他</th>
-        </tr>
-        <tr>
-            <td><a href="https://rutracker.org/">Rutracker (Old)</a></td>
-            <td>啥平台都有</td>
-            <td>非国内</td>
-            <td>不止有学习版</td>
-        </tr>
-        <tr>
-            <td><a href="https://rutracker.games/">Rutracker (New)</a></td>
-            <td>PC</td>
-            <td>非国内</td>
-            <td>/</td>
-        </tr>
-        <tr>
-            <td><a href="https://byruthub.org/">BYRUTHUB</a></td>
-            <td>PC</td>
-            <td>非国内</td>
-            <td>/</td>
-        </tr>
-        <tr>
-            <td><a href="https://online-fix.me/">Online-Fix</a></td>
-            <td>PC</td>
-            <td>非国内</td>
-            <td>包含联机补丁</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.skidrowreloaded.com/">Skidrow & Reloaded</a></td>
-            <td>PC</td>
-            <td>非国内</td>
-            <td>/</td>
-        </tr>
+    <div id="content8" class="content">
+        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN1">【学习版】下载学习版的网站</button>
+        <div id="LANREN1" class="collapse">
+            <center><table border="1">
+                </div></details>
+                <tr>
+                    <th colspan="4">【学习版】下载学习版的网站</th>
+                </tr>
+                <tr>
+                    <th>网页名</th>
+                    <th>支持平台</th>
+                    <th>国内/非国内</th>
+                    <th>其他</th>
+                </tr>
+                <tr>
+                    <td><a href="https://rutracker.org/">Rutracker (Old)</a></td>
+                    <td>各类平台都有</td>
+                    <td>非国内</td>
+                    <td>除学习版外还有其他资源</td>
+                </tr>
+                <tr>
+                    <td><a href="https://rutracker.games/">Rutracker (New)</a></td>
+                    <td>PC</td>
+                    <td>非国内</td>
+                    <td>/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://byruthub.org/">BYRUTHUB</a></td>
+                    <td>PC</td>
+                    <td>非国内</td>
+                    <td>/</td>
+                </tr>
+                <tr>
+                    <td><a href="https://online-fix.me/">Online-Fix</a></td>
+                    <td>PC</td>
+                    <td>非国内</td>
+                    <td>包含联机补丁</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.skidrowreloaded.com/">Skidrow & Reloaded</a></td>
+                    <td>PC</td>
+                    <td>非国内</td>
+                    <td>/</td>
+                </tr>
         <tr>
             <td><a href="https://iosvizor.com/">iOS Vizor</a></td>
             <td>iOS</td>
@@ -915,7 +1041,7 @@
             <td><a href="https://gamestarfield.com/">游戏星空</a></td>
             <td>PC</td>
             <td>国内</td>
-            <td>可能不止PC</td>
+            <td>不止PC</td>
         </tr>
         <tr>
             <td><a href="https://2468c.com/">奥德彪计划</a></td>
@@ -927,895 +1053,1011 @@
             <td><a href="https://ipa.store/">iPA商店</a></td>
             <td>iOS</td>
             <td>国内</td>
-            <td>/</td>  
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN2">论坛</button>
-        <div id="LANREN2" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">论坛</th>
-        </tr>
-        <tr>
-            <th>论坛名</th>
-            <th>LANREN个人账号</tn>
-        </tr>
-        <tr>
-            <td><a href="https://ikunshare.com/">iKun论坛</a></td>
-            <td><a href="https://ikunshare.com/u/3">LANREN个人账号</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://bbs.sttls.cn/">Sttls清单分享</a></td>
             <td>/</td>
         </tr>
-        <tr>
-            <td><a href="https://caigames.cn/">菜玩社区</a></td>
-            <td><a href="https://caigames.cn/user-287.htm">LANREN个人账号</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://70games.net/">70Games</a></td>
-            <td><a href="https://70games.net/user-36830.htm/">LANREN个人账号</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://bbs.steamtools.net/">Steamtools论坛</a></td>
-            <td>/</td>
-        </tr>
-        <tr>
-            <td><a href="https://lixianla.com/">离线啦论坛</a></td>
-            <td>/</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN3">修改器</button>
-        <div id="LANREN3" class="collapse"><br />
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN2">论坛</button>
+    <div id="LANREN2" class="collapse">
+        <br />
         <table border="1">
-        <tr>
-            <th colspan="2">修改器</th>    
-        </tr>
-        <tr>
-            <th>修改器名称</th>
-            <th>修改器难度</th>
-        </tr>
-        <tr>
-            <td><a href="https://flingtrainer.com/">风铃月影</a></td>
-            <td>非常简单</td>
-        <tr>
-        <tr>
-            <td><a href="https://www.wemod.com/">WeMod</a></td>
-            <td>非常简单</td>    
-        </tr>
-        <tr>
-            <td><a href="https://github.com/dyang886/Game-Cheats-Manager">Game Cheats Manager</a></td>
-            <td>简单</td>    
-        </tr>
-        <tr>
-            <td><a href="https://www.cheatengine.org/">Cheat Engine（CE修改器）</a></td>
-            <td>中等</td>    
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN4">远程控制</button>
-        <div id="LANREN4" class="collapse"><br />
+            <tr>
+                <th colspan="2">论坛</th>
+            </tr>
+            <tr>
+                <th>论坛名</th>
+                <th>LANREN个人账号</th>
+            </tr>
+            <tr>
+                <td><a href="https://ikunshare.com/">iKun论坛</a></td>
+                <td><a href="https://ikunshare.com/u/3">LANREN个人账号</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://bbs.sttls.cn/">Sttls清单分享</a></td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><a href="https://caigames.cn/">菜玩社区</a></td>
+                <td><a href="https://caigames.cn/user-287.htm">LANREN个人账号</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://70games.net/">70Games</a></td>
+                <td><a href="https://70games.net/user-36830.htm/">LANREN个人账号</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://bbs.steamtools.net/">Steamtools论坛</a></td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td><a href="https://lixianla.com/">离线啦论坛</a></td>
+                <td>/</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN3">修改器</button>
+    <div id="LANREN3" class="collapse">
+        <br />
         <table border="1">
-        <tr>
-            <th colspan="7">远程控制</th>    
-        </tr>
-        <tr>
-            <th>名称</th>
-            <th>流畅度(免费版)</th>
-            <th>支持分辨率/帧数最高上限</th>
-            <th>官方/分流</th>
-            <th>是否有VIP</th>
-            <th>性价比</th>
-            <th>国内/非国内</th>
-            <p>注：仅限个人评价，有不满请勿喷。</p>
-        </tr>
-        <tr>
-            <td><a href="https://www.todesk.com/">Todesk</a></td>
-            <td>中</td>
-            <td>1080p(免费个人版) 2K30FPS(付费个人专业版) 4K60FPS/2K144FPS(付费个人游戏/性能版)</td>
-            <td>官方</td>
-            <td>有</td>
-            <td>低</td>
-            <td>国内</td>
-        </tr>
-        <tr>
-            <td><a href="https://sunlogin.oray.com/product/feat">向日葵</a></td>
-            <td>中高</td>
-            <td>未知</td>
-            <td>官方</td>
-            <td>有</td>
-            <td>中高</td>
-            <td>国内</td>    
-        </tr>
-        <tr>
-            <td><a href="https://www.raylink.live/">Raylink</a></td>
-            <td>高</td>
-            <td>流畅画质30FPS(免费版) 高清画质60FPS(菁英性能会员) 超高清画质60FPS(超级性能会员) 超高清画质144FPS(全球性能会员)</td>
-            <td>官方</td>
-            <td>有</td>
-            <td>高</td>
-            <td>国内</td>
-        </tr>
-        <tr>
-            <td><a href="https://pan.quange.cc/d/local/%E8%B5%84%E6%BA%90%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E8%BF%9C%E7%A8%8B%E5%B7%A5%E5%85%B7/qdesk/QDeskSetup1.1.1.5.exe?sign=mYBCAA3sGTSetUuHdSJow-2n9E_Hpx4d0G49fGkQvuY=:0">QuicDesk（前身fastLink）</a></td>
-            <td>高</td>
-            <td>8K60FPS 4K240FPS</td>
-            <td>分流</td>
-            <td>没有</td>
-            <td>高</td>
-            <td>国内</td>
-        </tr>
-        <tr>
-            <td><a href="https://parsec.app/">Parsec</a></td>
-            <td>高</td>
-            <td>未知</td>
-            <td>官方</td>
-            <td>没有</td>
-            <td>高</td>
-            <td>非国内</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN5">MOD网站</button>
-        <div id="LANREN5" class="collapse"><br />
+            <tr>
+                <th colspan="2">修改器</th>
+            </tr>
+            <tr>
+                <th>修改器名称</th>
+                <th>使用修改器难度</th>
+            </tr>
+            <tr>
+                <td><a href="https://flingtrainer.com/">风铃月影</a></td>
+                <td>非常简单</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.wemod.com/">WeMod</a></td>
+                <td>非常简单</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/dyang886/Game-Cheats-Manager">Game Cheats Manager</a></td>
+                <td>简单</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.cheatengine.org/">Cheat Engine（CE修改器）</a></td>
+                <td>中等</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN4">远程控制</button>
+    <div id="LANREN4" class="collapse">
+        <br />
         <table border="1">
-        <tr>
-            <th colspan="2">MOD网站</th>
-        </tr>
-        <tr>
-            <th>网站名</th>
-            <th>国内/非国内</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.nexusmods.com/">Nexus Mods</a></td>
-            <td>非国内</td>
-        </tr>
-        <tr>
-            <td><a href="https://mod.3dmgame.com/">3DM Mods</a></td>
-            <td>国内</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN6">游戏平台</button>
-        <div id="LANREN6" class="collapse"><br />
+            <tr>
+                <th colspan="7">远程控制</th>
+            </tr>
+            <tr>
+                <th>名称</th>
+                <th>流畅度(免费版)</th>
+                <th>支持分辨率/帧数最高上限</th>
+                <th>官方/分流</th>
+                <th>是否有VIP</th>
+                <th>性价比</th>
+                <th>国内/非国内</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.todesk.com/">Todesk</a></td>
+                <td>中</td>
+                <td>1080p(免费个人版) 2K30FPS(付费个人专业版) 4K60FPS/2K144FPS(付费个人游戏/性能版)</td>
+                <td>官方</td>
+                <td>有</td>
+                <td>低</td>
+                <td>国内</td>
+            </tr>
+            <tr>
+                <td><a href="https://sunlogin.oray.com/product/feat">向日葵</a></td>
+                <td>中高</td>
+                <td>未知</td>
+                <td>官方</td>
+                <td>有</td>
+                <td>中高</td>
+                <td>国内</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.raylink.live/">Raylink</a></td>
+                <td>高</td>
+                <td>流畅画质30FPS(免费版) 高清画质60FPS(菁英性能会员) 超高清画质60FPS(超级性能会员) 超高清画质144FPS(全球性能会员)</td>
+                <td>官方</td>
+                <td>有</td>
+                <td>高</td>
+                <td>国内</td>
+            </tr>
+            <tr>
+                <td><a href="https://pan.quange.cc/d/local/%E8%B5%84%E6%BA%90%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7/%E8%BF%9C%E7%A8%8B%E5%B7%A5%E5%85%B7/qdesk/QDeskSetup1.1.1.5.exe?sign=mYBCAA3sGTSetUuHdSJow-2n9E_Hpx4d0G49fGkQvuY=:0">QuicDesk（前身fastLink）</a></td>
+                <td>高</td>
+                <td>8K60FPS 4K240FPS</td>
+                <td>分流</td>
+                <td>无</td>
+                <td>高</td>
+                <td>国内</td>
+            </tr>
+            <tr>
+                <td><a href="https://parsec.app/">Parsec</a></td>
+                <td>高</td>
+                <td>未知</td>
+                <td>官方</td>
+                <td>无</td>
+                <td>高</td>
+                <td>非国内</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN5">MOD网站</button>
+    <div id="LANREN5" class="collapse">
+        <br />
         <table border="1">
-        <tr>
-            <th colspan="3">游戏平台</th>
-        </tr>
-        <tr>
-            <th>平台名</th>
-            <th>中文名</th>
-            <th>服务器延迟情况</th>
-        </tr>
+            <tr>
+                <th colspan="2">MOD网站</th>
+            </tr>
+            <tr>
+                <th>网站名</th>
+                <th>国内/非国内</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.nexusmods.com/">Nexus Mods</a></td>
+                <td>非国内</td>
+            </tr>
+            <tr>
+                <td><a href="https://mod.3dmgame.com/">3DM Mods</a></td>
+                <td>国内</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN6">游戏平台</button>
+    <div id="LANREN6" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="3">游戏平台</th>
+            </tr>
+            <tr>
+                <th>平台名</th>
+                <th>中文名</th>
+                <th>服务器延迟情况</th>
+            </tr>
         <tr>
             <td><a href="https://store.steampowered.com/">Steam</a></td>
-            <td>蒸汽平台</td>
-            <td>正常</th>
+            <td>蒸汽平台(Steam)</td>
+            <td>正常</td>
         </tr>
         <tr>
             <td><a href="https://www.epicgames.com/store/">Epic Games Store</a></td>
-            <td>E宝</td>
-            <td>正常</th>
+            <td>E宝(Epic)</td>
+            <td>正常</td>
         </tr>
         <tr>
             <td><a href="https://www.origin.com/zh-cn/store">Electronic Arts</a></td>
             <td>/</td>
-            <td>烂土豆</th>
+            <td>极差</td>
         </tr>
         <tr>
             <td><a href="https://www.ubisoft.com/">Ubisoft</a></td>
             <td>育碧</td>
-            <td>国内烂土豆;国外正常</th>
+            <td>国内极差;国外正常</td>
         </tr>
         <tr>
             <td><a href="https://www.gogalaxy.com/">GOG GALAXY</a></td>
             <td>/</td>
-            <td>正常</th>
+            <td>正常</td>
         </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN7">学习版下载器</button>
-        <div id="LANREN7" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">学习版下载器</th>
-        </tr>
-        <tr>
-            <th>名称</th>
-            <th>下载情况</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.appmiu.com/21431.html">GameBox</a></td>
-            <td>一般</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.123pan.com/s/AYG9-zmmVH">Pcstory(蘑菇下载器)</a></td>
-            <td>一般</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN8">免费加速器</button>
-        <div id="LANREN8" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="4">免费加速器</th>    
-        </tr>
-        <tr>
-            <th>加速器名称</th>
-            <th>加速情况</th>
-            <th>平台/游戏加速免费</th>
-            <th>加速平台</th>
-        </tr>
-        <tr>
-            <td><a href="https://steampp.net/">Watt Toolkit(Steam++)</a></td>
-            <td>一般</td>
-            <td>平台加速免费</td>
-            <td>PC</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.dogfight360.com/blog/686/#comment-41622">Steamcommunity 302</a></td>
-            <td>一般</td>
-            <td>平台加速免费</td>
-            <td>PC</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.ourplay.net/pc/">OurPlay</a></td>
-            <td>一般</td>
-            <td>平台&游戏加速免费</td>
-            <td>PC/移动端</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.gijsq.com/">GI加速器(每天免费加速1小时)</a></td>
-            <td>良好</td>
-            <td>平台&游戏加速免费</td>
-            <td>PC</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN9">解压软件</button>
-        <div id="LANREN9" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">解压软件</th>    
-        </tr>
-        <tr>
-            <th>软件名称</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.7-zip.org/">7-Zip</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://www.winrar.com/">WinRAR</a></td>
-        </tr>
-        <tr>
-            <td>
-        <a href="https://www.bandizip.com/">Bandizip</a></td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN10">音源</button>
-        <div id="LANREN10" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">音源</th>    
-        </tr>
-        <tr>
-            <th>音源名称</th>
-            <th>音源支持格式</th>
-        </tr>
-        <tr>
-            <td><a href="http://110.42.41.81:1314/script">iKun LX Music 公益音源</a></td>
-            <td>Mp3/Mp3 320p/FLAC/FLAC 24bit</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.flacbox.net/">iKun MusicFree 公益音源</a></td>
-            <td>Mp3/Mp3 320p/FLAC/FLAC 24bit</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN11">音乐网站&软件</button>
-        <div id="LANREN11" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">音乐网站&软件</th>    
-        </tr>
-        <tr>
-            <th>名称</th>
-            <th>支持格式</th>
-        </tr>
-        <tr>
-            <td><a href="http://fonger.top/">方格音乐（魔音音乐）</a></td>
-            <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
-        </tr>
-        <tr>
-            <td><a href="https://docs.lxmusic.top/">LX Music（禁止在公共场合宣传）</a></td>
-            <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
-        </tr>
-        <tr>
-            <td><a href="https://listen1.github.io/listen1/">Listen 1</a></td>
-            <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
-        </tr>
-        <tr>
-            <td><a href="https://musicfree.upup.fun/">MusicFree</a></td>
-            <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.xmwav.com/">熊猫无损音乐网</a></td>
-            <td>Mp3 320p/Wav</td>
-        </tr>
-        <tr>
-            <td><a href="https://tool.liumingye.cn/music/#/">My Free MP3</a>(“音乐推荐”部分音乐链接来源)</td>
-            <td>Mp3</td>
-        </tr>
-        <tr>
-            <td><a href="https://ghyinyue.com/#/home">新果核音乐</a>(“音乐推荐”部分音乐链接来源)</td>
-            <td>Mp3/Mp3 320p/FLAC</td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN12">编程教学</button>
-        <div id="LANREN12" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">编程教学</th>    
-        </tr>
-        <tr>
-            <th>网站名称</th>
-        </tr>
-        <tr>
-            <td><a href="https://www.runoob.com/">菜鸟教程</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://www.w3school.com.cn/">W3school</a></td>
-        </tr>
-        </table></div>
-        <div style="height:20px;"></div>
-        <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN13">其他</button>
-        <div id="LANREN13" class="collapse"><br />
-        <table border="1">
-        <tr>
-            <th colspan="2">其他</th>    
-        </tr>
-        <tr>
-            <th>名称</th>
-        </tr>
-        <tr>
-            <td><a href="https://chinadlrs.com/">DL RS同人群官方网站</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://www.69mj.com/">69美剧网</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://www.aliyundrive.com/s/ohmzoxXv1JV">Adobe全家桶</a></td>
-        </tr>
-        </table></div>
-        </center></div>
-        <div id="content9" class="content">
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN7">学习版下载器</button>
+    <div id="LANREN7" class="collapse">
+        <br />
         <table border="1">
             <tr>
-                <th>游戏名</th>
-                <th>游戏类型</th>
-                <th>本体原价</th>
-                <th>平台支持</th>
-                <th>Steam游戏AppID</th>
-                <th>PC游戏平台</th>
-                <th>伪入库</th>
+                <th colspan="2">学习版下载器</th>
             </tr>
             <tr>
-                <td>Gene Shift Auto</td>
-                <td>多人俯视大逃杀</td>
-                <td>免费</td>
-                <td>PC/Linux/SteamOS</td>
-                <td>308600</td>
-                <td><a href="https://store.steampowered.com/app/308600/Gene_Shift_Auto/">Steam</a></td>
-                <td>/</td>    
+                <th>名称</th>
+                <th>下载情况</th>
             </tr>
             <tr>
-                <td>Goose Goose Duck</td>
-                <td>多人太空狼人杀</td>
-                <td>免费</td>
-                <td>PC/MAC/iOS/Android</td>
-                <td>1568590</td>
-                <td><a href="https://store.steampowered.com/app/1568590/Goose_Goose_Duck/">Steam</a></td>
-                <td>/</td>  
+                <td><a href="https://www.appmiu.com/21431.html">GameBox</a></td>
+                <td>一般</td>
             </tr>
             <tr>
-                <td>THE FINALS</td>
-                <td>多人快节奏FPS</td>
-                <td>免费</td>
-                <td>PC/PS5/Xbox Series X|S</td>
-                <td>2073850</td>
-                <td><a href="https://store.steampowered.com/app/2073850/THE_FINALS/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Counter-Strike 2</td>
-                <td>多人竞技FPS</td>
-                <td>免费</td>
-                <td>PC</td>
-                <td>730</td>
-                <td><a href="https://store.steampowered.com/app/730/CounterStrike_2/">Steam</a><br /><a href="https://pvp.wanmei.com/">完美世界</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>异形丛生：虫启天降 (Alien Swarm: Reactive Drop)</td>
-                <td>多人俯视射击</td>
-                <td>免费</td>
-                <td>PC/iOS</td>
-                <td>563560</td>
-                <td><a href="https://store.steampowered.com/app/563560/_Alien_Swarm_Reactive_Drop/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Combat Master: Season 2</td>
-                <td>多人快节奏FPS</td>
-                <td>免费</td>
-                <td>PC</td>
-                <td>2281730</td>
-                <td><a href="https://store.steampowered.com/app/2281730/Combat_Master_Season_2/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Ironsight</td>
-                <td>多人竞技FPS</td>
-                <td>免费</td>
-                <td>PC</td>
-                <td>783770</td>
-                <td><a href="https://store.steampowered.com/app/783770/Ironsight/">Steam</a></td>
-                <td>/</td>
-            </tr>
-                <td>生死狙击2</td>
-                <td>多人竞技FPS</td>
-                <td>免费</td>
-                <td>PC</td>
-                <td>1969870</td>
-                <td><a href="https://store.steampowered.com/app/1969870/2/">Steam</a><br /><a href="https://www.ssjj.cn/">官网</a></td>
-                <td>/</td>
-            </tr>
-            </tr>
-                <td>Apex Legends</td>
-                <td>大逃杀快节奏FPS</td>
-                <td>免费</td>
-                <td>PC/PS4/Xbox One/Nintendo Switch</td>
-                <td>1172470</td>
-                <td><a href="https://store.steampowered.com/app/1172470/Apex_Legends/">Steam</a><br /><a href="https://www.ea.com/games/apex-legends?isLocalized=true">EA</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td><a href="https://www.taptap.cn/app/165287">Phigros</a></td>
-                <td>无轨下落式音游</td>
-                <td>免费</td>
-                <td>Android/iOS</td>
-                <td>/</td>
-                <td>/</td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>MuseSwipr</td>
-                <td>新型下落定轨音游</td>
-                <td>免费</td>
-                <td>PC</td>
-                <td>1879340</td>
-                <td><a href="https://store.steampowered.com/app/1879340/MuseSwipr/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Milthm</td>
-                <td>无轨下落式音游</td>
-                <td>免费</td>
-                <td>PC/Android/iOS</td>
-                <td>2498480</td>
-                <td><a href="https://store.steampowered.com/app/2498480/Milthm/">Steam</a><br /><a href="https://www.milthm.com/">官网</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Halo Infinite</td>
-                <td>多人竞技FPS</td>
-                <td>免费</td>
-                <td>PC/Xbox Series X|S/Xbox One</td>
-                <td>1240440</td>
-                <td><a href="https://store.steampowered.com/app/1240440/Halo_Infinite/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>三角洲行动</td>
-                <td>多人竞技FPS</td>
-                <td>免费</td>
-                <td>PC/Android/iOS</td>
-                <td>2507950</td>
-                <td><a href="https://store.steampowered.com/app/2507950/_/?l=schinese">Steam</a><br /><a href="https://df.qq.com/">官网</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Dark Deception</td>
-                <td>单人冒险追逐类恐怖</td>
-                <td>Steam:免费 Epic完整版:RMB ¥60</td>
-                <td>PC</td>
-                <td>332950</td>
-                <td><a href="https://store.steampowered.com/app/332950/Dark_Deception/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dark-deception">Epic</a></td>   
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>POLYGON</td>
-                <td>多人竞技FPS</td>
-                <td>免费</td>
-                <td>PC</td>
-                <td>1241100</td>
-                <td><a href="https://store.steampowered.com/app/1241100/POLYGON/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>同步音律喵赛克</td>    
-                <td>下落式音游</td>  
-                <td>RMB ¥12</td>  
-                <td>PC/Android/iOS</td>  
-                <td>952040</td>  
-                <td><a href="https://store.steampowered.com/app/952040/_/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/iPXIJ24hk6qb">全DLC清单</a></td>  
-            </tr>
-            <tr>
-                <td>The Room</td>
-                <td>解谜/洛夫克拉夫特式恐怖</td>
-                <td>RMB ¥22</td>
-                <td>PC/Android/iOS</td>
-                <td>288160</td>
-                <td><a href="https://store.steampowered.com/app/288160/The_Room/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>    
-            </tr>
-            <tr>
-                <td>The Room Two</td>
-                <td>解谜/洛夫克拉夫特式恐怖</td>
-                <td>RMB ¥22</td>
-                <td>PC/Android/iOS</td>
-                <td>425580</td>
-                <td><a href="https://store.steampowered.com/app/425580/The_Room_Two/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>
-            </tr>
-            <tr>
-                <td>The Room Three</td>
-                <td>解谜/洛夫克拉夫特式恐怖</td>
-                <td>RMB ¥26</td>
-                <td>PC/Android/iOS</td>
-                <td>456750</td>
-                <td><a href="https://store.steampowered.com/app/456750/The_Room_Three/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>    
-            </tr>
-            <tr>
-                <td>冰与火之舞 A Dance of Fire and Ice</td>
-                <td>节奏式点击新型音游</td>
-                <td>RMB ¥26</td>
-                <td>PC/MAC/Linux/SteamOS/Android/iOS</td>
-                <td>977950</td>
-                <td><a href="https://store.steampowered.com/app/977950/_A_Dance_of_Fire_and_Ice/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>The Room 4: Old Sins</td>
-                <td>解谜/洛夫克拉夫特式恐怖</td>
-                <td>RMB ¥35</td>
-                <td>PC/Android/iOS</td>
-                <td>1361320</td>
-                <td><a href="https://store.steampowered.com/app/1361320/The_Room_4_Old_Sins/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>    
-            </tr>
-            <tr>
-                <td>Dishonored</td>
-                <td>潜行/暗杀第一人称单机</td>
-                <td>Steam:RMB ¥41 Epic完整版:RMB ¥83</td>
-                <td>PC/PS3/Xbox 360</td>
-                <td>205100</td>
-                <td><a href="https://store.steampowered.com/app/205100/Dishonored/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dishonored-definitive-edition">Epic</a></td>    
-                <td><a href="https://pan.quark.cn/s/7ccf0d3db027#/list/share/c4b083908bfa4f9eab5960d0510d9a9f-%E8%80%BB%E8%BE%B1">清单</a></td>
-            </tr>
-            <tr>
-                <td>Candleman: The Complete Journey</td>
-                <td>独立动作冒险解谜跑酷游戏</td>
-                <td>RMB ¥48</td>
-                <td>PC/MAC/Android/iOS</td>
-                <td>591630</td>
-                <td><a href="https://store.steampowered.com/app/591630/Candleman_The_Complete_Journey/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>全网公敌</td>
-                <td>解谜悬疑游戏</td>
-                <td>RMB ¥58</td>
-                <td>PC/MAC/Android/iOS</td>
-                <td>1216710</td>
-                <td><a href="https://store.steampowered.com/app/1216710/_/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/imJ6j28i26yb">清单</a></td>    
-            </tr>
-            <tr>
-                <td>全网公敌2 新世界</td>
-                <td>解谜悬疑游戏</td>    
-                <td>RMB ¥58</td>
-                <td>PC/MAC/Android/iOS</td>
-                <td>2421410</td>
-                <td><a href="https://store.steampowered.com/app/2421410/2/">Steam</a></td>
-                <td><a href="https://wwyk.lanzoue.com/iEE5n28i2b7e">清单</a></td>    
-            </td>
-            <tr>
-                <td>DARQ: Complete Edition</td>
-                <td>解谜式恐怖游戏</td>
-                <td>RMB ¥70</td>
-                <td>PC</td>
-                <td>433550</td>
-                <td><a href="https://store.steampowered.com/app/433550/DARQ_Complete_Edition/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/darq-complete-edition">Epic</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Agent A: A puzzle in disguise</td>
-                <td>解谜冒险</td>
-                <td>RMB ¥70</td>
-                <td>PC/MAC/Android/iOS</td>
-                <td>801480</td>
-                <td><a href="https://store.steampowered.com/app/801480/Agent_A/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Far Cry 3 - Blood Dragon</td>
-                <td>单机开放世界FPS</td>
-                <td>RMB ¥75</td>
-                <td>PC/PS4/Xbox360</td>
-                <td>233270</td>
-                <td><a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%823%EF%BC%9A%E8%A1%80%E9%BE%99/57062ebf88a7e316728b4626.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/233270/Far_Cry_3__Blood_Dragon/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Far Cry 3</td>
-                <td>单机开放世界FPS</td>
-                <td>Ubisoft(育碧):RMB ¥88 Steam:RMB ¥98</td>
-                <td>PC/PS3/Xbox360</td>
-                <td>220240</td>
-                <td><a href="https://store.ubisoft.com/cn/far-cry-3/57062ebf88a7e316728b462c.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/220240/Far_Cry_3/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Metro 2033 Redux</td>
-                <td>单机线性FPS</td>
-                <td>Steam:RMB ¥98 Epic:RMB ¥65</td>
-                <td>PC</td>
-                <td>286690</td>
-                <td><a href="https://store.steampowered.com/app/286690/Metro_2033_Redux/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/metro-2033-redux">Epic</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Metro: Last Light Redux</td>
-                <td>单机线性FPS</td>
-                <td>Steam:RMB ¥98 Epic:RMB ¥65</td>
-                <td>PC</td>
-                <td>287390</td>
-                <td><a href="https://store.steampowered.com/app/287390/Metro_Last_Light_Redux/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/metro-last-light-redux">Epic</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Palworld / 幻兽帕鲁</td>
-                <td>开放世界多人生存刷怪</td>
-                <td>RMB ¥108</td>
-                <td>PC</td>
-                <td>1623730</td>
-                <td><a href="https://store.steampowered.com/app/1623730/Palworld/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>狙击手：幽灵战士契约 2</td>
-                <td>单机剧情FPS</td>
-                <td>RMB ¥119</td>
-                <td>PC</td>
-                <td>1338770</td>
-                <td><a href="https://store.steampowered.com/app/1338770/_2/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Dishonored 2</td>
-                <td>潜行/暗杀第一人称单机</td>
-                <td>RMB ¥125</td>
-                <td>PC/PS4/Xbox One</td>
-                <td>403640</td>
-                <td><a href="https://store.steampowered.com/app/403640/Dishonored_2/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dishonored-2">Epic</a></td>
-                <td><a href="https://pan.quark.cn/s/7ccf0d3db027#/list/share/c4b083908bfa4f9eab5960d0510d9a9f-%E8%80%BB%E8%BE%B1">清单</a></td>    
-            </tr>
-            <tr>
-                <td>Dishonored: Death of the Outsider</td>
-                <td>潜行/暗杀第一人称单机</td>
-                <td>RMB ¥125</td>
-                <td>PC/PS4/Xbox One</td>
-                <td>614570</td>
-                <td><a href="https://store.steampowered.com/app/614570/Dishonored_Death_of_the_Outsider/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dishonored-death-of-the-outsider">Epic</a></td>
-                <td><a href="https://pan.quark.cn/s/7ccf0d3db027#/list/share/c4b083908bfa4f9eab5960d0510d9a9f-%E8%80%BB%E8%BE%B1">清单</a></td>    
-            </tr>
-            <tr>
-                <td>Bodycam</td>
-                <td>超拟真多人竞技FPS</td>
-                <td>RMB ¥128</td>
-                <td>PC</td>
-                <td>2406770</td>
-                <td><a href="https://store.steampowered.com/app/2406770/Bodycam/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>海参2</td>
-                <td>单机线性FPS</td>
-                <td>RMB ¥130</td>
-                <td>PC/PS5/Xbox Series X|S</td>
-                <td>1164940</td>
-                <td><a href="https://store.steampowered.com/app/1164940/2/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Far Cry 4</td>
-                <td>多人PVE/PVP/开放世界FPS</td>
-                <td>RMB ¥148</td>
-                <td>PC/Xbox360/Xbox One/PS3|4</td>
-                <td>298110</td>
-                <td><a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%824/56c4948488a7e300458b4754.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/298110/Far_Cry_4/">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Metro Exodus</td>
-                <td>单机线性FPS</td>
-                <td>Steam:RMB ¥148 Epic:RMB ¥149</td>
-                <td>PC/PS4/Xbox One</td>
-                <td>412020</td>
-                <td><a href="https://store.steampowered.com/app/412020/Metro_Exodus/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/metro-exodus">Epic</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Metro Awakening(即将推出)</td>
-                <td>单机线性FPS</td>
-                <td>未知</td>
-                <td>VR</td>
-                <td>2669410</td>
-                <td><a href="https://store.steampowered.com/app/2669410/Metro_Awakening/">Steam</td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>HITMAN World of Assassination</td>
-                <td>单人潜行第三人称刺杀</td>
-                <td>Steam:RMB ¥238 Epic:RMB ¥218</td>
-                <td>PC/PS4|5/Xbox One/Xbox Series X|S/Stadia/VR</td>
-                <td>1659040</td>
-                <td><a href="https://store.steampowered.com/app/1659040/HITMAN_World_of_Assassination/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/hitman-3">Epic</a></td>
-                <td><a href="https://wwyk.lanzoue.com/iyPEm24bsp6h">Demo升级完整版线上补丁</a></td>    
-            </tr>
-            <tr>
-                <td>极限竞速：地平线5</td>
-                <td>单机剧情/多人对战/合作赛车</td>
-                <td>RMB ¥248</td>
-                <td>PC/Xbox Series X|S/Xbox One</td>
-                <td>1551360</td>
-                <td><a href="https://store.steampowered.com/app/1551360/_5/">Steam</a><br /><a href="https://www.xbox.com/zh-CN/games/store/5/9NKX70BBCDRN/0010">Xbox</a></td>
-                <td><a href="https://wwyk.lanzoue.com/i6zyq28i36ud">清单(含DLC)</a></td>
-            </tr>
-            <tr>
-                <td>Far Cry Primal</td>
-                <td>单机开放世界FPS</td>
-                <td>RMB ¥248</td>
-                <td>PC/Xbox One/PS4</td>
-                <td>371660</td>
-                <td><a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%82%EF%BC%9A%E9%87%8E%E8%9B%AE%E7%BA%AA%E6%BA%90/58f9d0016b54a49f138b4568.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/371660/Far_Cry_Primal/">Steam</a></td>
-                <td>/</td>
-            </tr>
-            <tr>
-                <td>Far Cry 5</td>
-                <td>PVP/PVE/单机开放世界FPS</td>
-                <td>RMB ¥298</td>
-                <td>PC/PS4/Xbox One</td>
-                <td>552520</td>
-                <td><a href="https://store.ubisoft.com/cn/%E3%80%8A%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%82-5%E3%80%8B/59197f14adc7245a288b4567.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/552520/Far_Cry_5/">Steam</td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>Far Cry 6</td>
-                <td>双人PVE/单机开放世界FPS</td>
-                <td>RMB ¥298</td>
-                <td>PC/Xbox Series X|S/PS4|5/Xbox One/Stadia</td>
-                <td>2369390</td>
-                <td><a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%82-6/5ecd2cac5cdf9a1528a8c1d2.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/2369390/Far_Cry_6/?curator_clanid=34004029">Steam</a></td>
-                <td>/</td>    
-            </tr>
-            <tr>
-                <td>赛博朋克2077</td>
-                <td>单机剧情FPS</td>
-                <td>RMB ¥298</td>
-                <td>PC/PS4|5/Xbox One/Xbox Series X</td>
-                <td>1091500</td>
-                <td><a href="https://store.steampowered.com/app/1091500/_2077/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/cyberpunk-2077">Epic</a></td>
-                <td><a href="https://wwyk.lanzoue.com/iy7Fz28i3l4h">全DLC清单</a></td>    
-            </tr>
-            <tr>
-                <td>使命召唤®：黑色行动 6</td>
-                <td>单机剧情/多人快节奏FPS</td>
-                <td>RMB ¥488</td>
-                <td>PC/Xbox/PS</td>
-                <td>1938090</td>
-                <td><a href="https://store.steampowered.com/app/1938090/_/">Steam</a></td>
-                <td>/</td>
+                <td><a href="https://www.123pan.com/s/AYG9-zmmVH">Pcstory(蘑菇下载器)</a></td>
+                <td>一般</td>
             </tr>
         </table>
-    </center>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN8">免费加速器</button>
+    <div id="LANREN8" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="4">免费加速器</th>
+            </tr>
+            <tr>
+                <th>加速器名称</th>
+                <th>加速情况</th>
+                <th>平台/游戏加速免费</th>
+                <th>加速平台</th>
+            </tr>
+            <tr>
+                <td><a href="https://steampp.net/">Watt Toolkit(Steam++)</a></td>
+                <td>一般</td>
+                <td>平台加速免费</td>
+                <td>PC</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.dogfight360.com/blog/686/#comment-41622">Steamcommunity 302</a></td>
+                <td>一般</td>
+                <td>平台加速免费</td>
+                <td>PC</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.ourplay.net/pc/">OurPlay</a></td>
+                <td>一般</td>
+                <td>平台&游戏加速免费</td>
+                <td>PC/移动端</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.gijsq.com/">GI加速器(每天免费加速1小时)</a></td>
+                <td>良好</td>
+                <td>平台&游戏加速免费</td>
+                <td>PC</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN9">解压软件</button>
+    <div id="LANREN9" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="2">解压软件</th>
+            </tr>
+            <tr>
+                <th>软件名称</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.7-zip.org/">7-Zip</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.winrar.com/">WinRAR</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.bandizip.com/">Bandizip</a></td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN10">音源</button>
+    <div id="LANREN10" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="2">音源</th>
+            </tr>
+            <tr>
+                <th>音源名称</th>
+                <th>音源支持格式</th>
+            </tr>
+            <tr>
+                <td><a href="http://110.42.38.239:1314/script">iKun LX Music 公益音源</a></td>
+                <td>Mp3/Mp3 320p/FLAC/FLAC 24bit</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.flacbox.net/">iKun MusicFree 公益音源</a></td>
+                <td>Mp3/Mp3 320p/FLAC/FLAC 24bit</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN11">音乐网站&软件</button>
+    <div id="LANREN11" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="2">音乐网站&软件</th>
+            </tr>
+            <tr>
+                <th>名称</th>
+                <th>支持格式</th>
+            </tr>
+            <tr>
+                <td><a href="http://fonger.top/">方格音乐（魔音音乐）</a></td>
+                <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
+            </tr>
+            <tr>
+                <td><a href="https://docs.lxmusic.top/">LX Music（禁止在公共场合宣传）</a></td>
+                <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
+            </tr>
+            <tr>
+                <td><a href="https://listen1.github.io/listen1/">Listen 1</a></td>
+                <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
+            </tr>
+            <tr>
+                <td><a href="https://musicfree.upup.fun/">MusicFree</a></td>
+                <td>Mp3/Mp3 320p/FLAC 16bit/FLAC 24bit</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.xmwav.com/">熊猫无损音乐网</a></td>
+                <td>Mp3 320p/Wav</td>
+            </tr>
+            <tr>
+                <td><a href="https://tool.liumingye.cn/music/#/">My Free MP3</a>(“音乐推荐”部分音乐链接来源)</td>
+                <td>Mp3</td>
+            </tr>
+            <tr>
+                <td><a href="https://ghyinyue.com/#/home">新果核音乐</a>(“音乐推荐”部分音乐链接来源)</td>
+                <td>Mp3/Mp3 320p/FLAC</td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN12">编程教学</button>
+    <div id="LANREN12" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="2">编程教学</th>
+            </tr>
+            <tr>
+                <th>网站名称</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.runoob.com/">菜鸟教程</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.w3school.com.cn/">W3school</a></td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <div style="height:20px;"></div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#LANREN13">其他</button>
+    <div id="LANREN13" class="collapse">
+        <br />
+        <table border="1">
+            <tr>
+                <th colspan="2">其他</th>
+            </tr>
+            <tr>
+                <th>名称</th>
+            </tr>
+            <tr>
+                <td><a href="https://chinadlrs.com/">DL RS同人群官方网站</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.69mj.com/">69美剧网</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.aliyundrive.com/s/ohmzoxXv1JV">Adobe全家桶</a></td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+</center>
 </div>
-        <div id="content11" class="content"><h3>LANREN的其他作品</h3>
-            <div style="margin-left: 190px;" class="btn-group">
-            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">LANREN的杂物间（本地版）</button>
-            <ul class="dropdown-menu">
-            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i0Z0J1z1z95c" type="button" class="btn btn-link btn-outline-light text-dark"><b>LANREN的杂物间（本地版）</b></a>
-            <a style="text-decoration: none;" href="https://share.weiyun.com/XSRS73HM" type="button" class="btn btn-link btn-outline-light text-dark"><b>LANREN的杂物间（早期本地版）</b></a>
-            <a style="text-decoration: none;" href="https://share.weiyun.com/IzofUGTZ" type="button" class="btn btn-link btn-outline-light text-dark"><b>LANREN的杂物间（最早期本地版）</b></a></ul>
-            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">Steamtools教程</button>
-            <ul class="dropdown-menu">
-            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i46Sd26ws42f" type="button" class="btn btn-link btn-outline-light text-dark"><b>Steamtools使用教程（Flash版） 密码:68bb</b></a>
-            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/b00rnb60ti" type="button" class="btn btn-link btn-outline-light text-dark"><b>LANREN Steamtools教程（HTML版） 密码:etzn（本文档）</b></a></ul>
-            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/iyPEm24bsp6h" type="button" class="btn btn-link btn-outline-light text-dark"><b>杀手3游戏Demo升级完整版补丁+线上补丁</b></a>
-            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i46Sd26ws42f" type="button" class="btn btn-link btn-outline-light text-dark"><b>The Room壁纸 密码:cb4b</b></a>
-            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i46Sd26ws42f" type="button" class="btn btn-link btn-outline-light text-dark"><b>迅雷破解 密码:LANREN</b></a>
-            </div>
-        </div></div>
-        <div id="content12" class="content">
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#t1">内容提议</button>
-            <div id="t1" class="collapse"><br />
-            <ul><b><h3><li>Class_as</li><br /><li>魈鸟</li><br /><li>方乾乾</li><br /><li>7Day、Superman</li><br /><li>🐇传说中的吉跋猫🐇</li></h3><br /></ul></div>
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#t2">部分资源提供</button>
-            <div id="t2" class="collapse"><br />
-            <ul><h3><li>菜Games</li><br /><li>方乾乾</li><br /><li>IKUN</li></h3></b></ul></div>
-        </div>
-        <div id="content13" class="content">
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-3">LANREN Steamtools --- V2.3 Demo</button>
-            <div id="V2-3" class="collapse"><br />
-            <b><h3>LANREN Steamtools --- V2.3 Demo</h3></b>
-            <h3><small>参与更新：LANREN</small></h3>
-            <small><h3>更新时间：2024年9月17日</h3></small>
-            <ul style="margin-left: 200px;">
+<div id="content9" class="content">
+    <table border="1">
+        <tr>
+            <th>游戏名</th>
+            <th>游戏类型</th>
+            <th>本体原价</th>
+            <th>平台支持</th>
+            <th>Steam游戏AppID</th>
+            <th>PC游戏平台</th>
+            <th>伪入库</th>
+        </tr>
+        <tr>
+            <td>Gene Shift Auto</td>
+            <td>多人俯视大逃杀</td>
+            <td>免费</td>
+            <td>PC/Linux/SteamOS</td>
+            <td>308600</td>
+            <td><a href="https://store.steampowered.com/app/308600/Gene_Shift_Auto/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Goose Goose Duck</td>
+            <td>多人太空狼人杀</td>
+            <td>免费</td>
+            <td>PC/MAC/iOS/Android</td>
+            <td>1568590</td>
+            <td><a href="https://store.steampowered.com/app/1568590/Goose_Goose_Duck/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>THE FINALS</td>
+            <td>多人快节奏FPS</td>
+            <td>免费</td>
+            <td>PC/PS5/Xbox Series X|S</td>
+            <td>2073850</td>
+            <td><a href="https://store.steampowered.com/app/2073850/THE_FINALS/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Counter-Strike 2</td>
+            <td>多人竞技FPS</td>
+            <td>免费</td>
+            <td>PC</td>
+            <td>730</td>
+            <td><a href="https://store.steampowered.com/app/730/CounterStrike_2/">Steam</a><br /><a href="https://pvp.wanmei.com/">完美世界</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>异形丛生：虫启天降 (Alien Swarm: Reactive Drop)</td>
+            <td>多人俯视射击</td>
+            <td>免费</td>
+            <td>PC/iOS</td>
+            <td>563560</td>
+            <td><a href="https://store.steampowered.com/app/563560/_Alien_Swarm_Reactive_Drop/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Combat Master: Season 2</td>
+            <td>多人快节奏FPS</td>
+            <td>免费</td>
+            <td>PC</td>
+            <td>2281730</td>
+            <td><a href="https://store.steampowered.com/app/2281730/Combat_Master_Season_2/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Ironsight</td>
+            <td>多人竞技FPS</td>
+            <td>免费</td>
+            <td>PC</td>
+            <td>783770</td>
+            <td><a href="https://store.steampowered.com/app/783770/Ironsight/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>生死狙击2</td>
+            <td>多人竞技FPS</td>
+            <td>免费</td>
+            <td>PC</td>
+            <td>1969870</td>
+            <td><a href="https://store.steampowered.com/app/1969870/2/">Steam</a><br /><a href="https://www.ssjj.cn/">官网</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Apex Legends</td>
+            <td>大逃杀快节奏FPS</td>
+            <td>免费</td>
+            <td>PC/PS4/Xbox One/Nintendo Switch</td>
+            <td>1172470</td>
+            <td><a href="https://store.steampowered.com/app/1172470/Apex_Legends/">Steam</a><br /><a href="https://www.ea.com/games/apex-legends?isLocalized=true">EA</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.taptap.cn/app/165287">Phigros</a></td>
+            <td>无轨下落式音游</td>
+            <td>免费</td>
+            <td>Android/iOS</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>MuseSwipr</td>
+            <td>新型下落定轨音游</td>
+            <td>免费</td>
+            <td>PC</td>
+            <td>1879340</td>
+            <td><a href="https://store.steampowered.com/app/1879340/MuseSwipr/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Milthm</td>
+            <td>无轨下落式音游</td>
+            <td>免费</td>
+            <td>PC/Android/iOS</td>
+            <td>2498480</td>
+            <td><a href="https://store.steampowered.com/app/2498480/Milthm/">Steam</a><br /><a href="https://www.milthm.com/">官网</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Halo Infinite</td>
+            <td>多人竞技FPS</td>
+            <td>免费</td>
+            <td>PC/Xbox Series X|S/Xbox One</td>
+            <td>1240440</td>
+            <td><a href="https://store.steampowered.com/app/1240440/Halo_Infinite/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>三角洲行动</td>
+            <td>多人竞技FPS</td>
+            <td>免费</td>
+            <td>PC/Android/iOS</td>
+            <td>2507950</td>
+            <td><a href="https://store.steampowered.com/app/2507950/_/?l=schinese">Steam</a><br /><a href="https://df.qq.com/">官网</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Dark Deception</td>
+            <td>单人冒险追逐类恐怖</td>
+            <td>Steam:免费 Epic完整版:RMB ¥60</td>
+            <td>PC</td>
+            <td>332950</td>
+            <td><a href="https://store.steampowered.com/app/332950/Dark_Deception/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dark-deception">Epic</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>POLYGON</td>
+            <td>多人竞技FPS</td>
+            <td>免费</td>
+            <td>PC</td>
+            <td>1241100</td>
+            <td><a href="https://store.steampowered.com/app/1241100/POLYGON/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>同步音律喵赛克</td>
+            <td>下落式音游</td>
+            <td>RMB ¥12</td>
+            <td>PC/Android/iOS</td>
+            <td>952040</td>
+            <td><a href="https://store.steampowered.com/app/952040/_/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/iPXIJ24hk6qb">全DLC清单</a></td>
+        </tr>
+            <tr>
+        <tr>
+            <td>The Room</td>
+            <td>解谜/洛夫克拉夫特式恐怖</td>
+            <td>RMB ¥22</td>
+            <td>PC/Android/iOS</td>
+            <td>288160</td>
+            <td><a href="https://store.steampowered.com/app/288160/The_Room/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>
+        </tr>
+        <tr>
+            <td>The Room Two</td>
+            <td>解谜/洛夫克拉夫特式恐怖</td>
+            <td>RMB ¥22</td>
+            <td>PC/Android/iOS</td>
+            <td>425580</td>
+            <td><a href="https://store.steampowered.com/app/425580/The_Room_Two/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>
+        </tr>
+        <tr>
+            <td>The Room Three</td>
+            <td>解谜/洛夫克拉夫特式恐怖</td>
+            <td>RMB ¥26</td>
+            <td>PC/Android/iOS</td>
+            <td>456750</td>
+            <td><a href="https://store.steampowered.com/app/456750/The_Room_Three/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>
+        </tr>
+        <tr>
+            <td>冰与火之舞 A Dance of Fire and Ice</td>
+            <td>节奏式点击新型音游</td>
+            <td>RMB ¥26</td>
+            <td>PC/MAC/Linux/SteamOS/Android/iOS</td>
+            <td>977950</td>
+            <td><a href="https://store.steampowered.com/app/977950/_A_Dance_of_Fire_and_Ice/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>The Room 4: Old Sins</td>
+            <td>解谜/洛夫克拉夫特式恐怖</td>
+            <td>RMB ¥35</td>
+            <td>PC/Android/iOS</td>
+            <td>1361320</td>
+            <td><a href="https://store.steampowered.com/app/1361320/The_Room_4_Old_Sins/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/i4MHy26w9t1a">成就+清单(密码:9bk8)</a></td>
+        </tr>
+        <tr>
+            <td>Dishonored</td>
+            <td>潜行/暗杀第一人称单机</td>
+            <td>Steam:RMB ¥41 Epic完整版:RMB ¥83</td>
+            <td>PC/PS3/Xbox 360</td>
+            <td>205100</td>
+            <td><a href="https://store.steampowered.com/app/205100/Dishonored/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dishonored-definitive-edition">Epic</a></td>
+            <td><a href="https://pan.quark.cn/s/7ccf0d3db027#/list/share/c4b083908bfa4f9eab5960d0510d9a9f-%E8%80%BB%E8%BE%B1">清单</a></td>
+        </tr>
+        <tr>
+            <td>Candleman: The Complete Journey</td>
+            <td>独立动作冒险解谜跑酷游戏</td>
+            <td>RMB ¥48</td>
+            <td>PC/MAC/Android/iOS</td>
+            <td>591630</td>
+            <td><a href="https://store.steampowered.com/app/591630/Candleman_The_Complete_Journey/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>全网公敌</td>
+            <td>解谜悬疑游戏</td>
+            <td>RMB ¥58</td>
+            <td>PC/MAC/Android/iOS</td>
+            <td>1216710</td>
+            <td><a href="https://store.steampowered.com/app/1216710/_/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/imJ6j28i26yb">清单</a></td>
+        </tr>
+        <tr>
+            <td>全网公敌2 新世界</td>
+            <td>解谜悬疑游戏</td>
+            <td>RMB ¥58</td>
+            <td>PC/MAC/Android/iOS</td>
+            <td>2421410</td>
+            <td><a href="https://store.steampowered.com/app/2421410/2/">Steam</a></td>
+            <td><a href="https://wwyk.lanzoue.com/iEE5n28i2b7e">清单</a></td>
+        </tr>
+        <tr>
+            <td>DARQ: Complete Edition</td>
+            <td>解谜式恐怖游戏</td>
+            <td>RMB ¥70</td>
+            <td>PC</td>
+            <td>433550</td>
+            <td><a href="https://store.steampowered.com/app/433550/DARQ_Complete_Edition/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/darq-complete-edition">Epic</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Agent A: A puzzle in disguise</td>
+            <td>解谜冒险</td>
+            <td>RMB ¥70</td>
+            <td>PC/MAC/Android/iOS</td>
+            <td>801480</td>
+            <td><a href="https://store.steampowered.com/app/801480/Agent_A/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Far Cry 3 - Blood Dragon</td>
+            <td>单机开放世界FPS</td>
+            <td>RMB ¥75</td>
+            <td>PC/PS4/Xbox360</td>
+            <td>233270</td>
+            <td><a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%823%EF%BC%9A%E8%A1%80%E9%BE%99/57062ebf88a7e316728b4626.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/233270/Far_Cry_3__Blood_Dragon/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Far Cry 3</td>
+            <td>单机开放世界FPS</td>
+            <td>Ubisoft(育碧):RMB ¥88 Steam:RMB ¥98</td>
+            <td>PC/PS3/Xbox360</td>
+            <td>220240</td>
+            <td><a href="https://store.ubisoft.com/cn/far-cry-3/57062ebf88a7e316728b462c.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/220240/Far_Cry_3/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Metro 2033 Redux</td>
+            <td>单机线性FPS</td>
+            <td>Steam:RMB ¥98 Epic:RMB ¥65</td>
+            <td>PC</td>
+            <td>286690</td>
+            <td><a href="https://store.steampowered.com/app/286690/Metro_2033_Redux/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/metro-2033-redux">Epic</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Metro: Last Light Redux</td>
+            <td>单机线性FPS</td>
+            <td>Steam:RMB ¥98 Epic:RMB ¥65</td>
+            <td>PC</td>
+            <td>287390</td>
+            <td><a href="https://store.steampowered.com/app/287390/Metro_Last_Light_Redux/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/metro-last-light-redux">Epic</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Palworld / 幻兽帕鲁</td>
+            <td>开放世界多人生存刷怪</td>
+            <td>RMB ¥108</td>
+            <td>PC</td>
+            <td>1623730</td>
+            <td><a href="https://store.steampowered.com/app/1623730/Palworld/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>狙击手：幽灵战士契约 2</td>
+            <td>单机剧情FPS</td>
+            <td>RMB ¥119</td>
+            <td>PC</td>
+            <td>1338770</td>
+            <td><a href="https://store.steampowered.com/app/1338770/_2/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Dishonored 2</td>
+            <td>潜行/暗杀第一人称单机</td>
+            <td>RMB ¥125</td>
+            <td>PC/PS4/Xbox One</td>
+            <td>403640</td>
+            <td><a href="https://store.steampowered.com/app/403640/Dishonored_2/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dishonored-2">Epic</a></td>
+            <td><a href="https://pan.quark.cn/s/7ccf0d3db027#/list/share/c4b083908bfa4f9eab5960d0510d9a9f-%E8%80%BB%E8%BE%B1">清单</a></td>
+        </tr>
+        <tr>
+            <td>Dishonored: Death of the Outsider</td>
+            <td>潜行/暗杀第一人称单机</td>
+            <td>RMB ¥125</td>
+            <td>PC/PS4/Xbox One</td>
+            <td>614570</td>
+            <td><a href="https://store.steampowered.com/app/614570/Dishonored_Death_of_the_Outsider/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/dishonored-death-of-the-outsider">Epic</a></td>
+            <td><a href="https://pan.quark.cn/s/7ccf0d3db027#/list/share/c4b083908bfa4f9eab5960d0510d9a9f-%E8%80%BB%E8%BE%B1">清单</a></td>
+        </tr>
+        <tr>
+            <td>Bodycam</td>
+            <td>超拟真多人竞技FPS</td>
+            <td>RMB ¥128</td>
+            <td>PC</td>
+            <td>2406770</td>
+            <td><a href="https://store.steampowered.com/app/2406770/Bodycam/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>海参2</td>
+            <td>单机线性FPS</td>
+            <td>RMB ¥130</td>
+            <td>PC/PS5/Xbox Series X|S</td>
+            <td>1164940</td>
+            <td><a href="https://store.steampowered.com/app/1164940/2/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Far Cry 4</td>
+            <td>多人PVE/PVP/开放世界FPS</td>
+            <td>RMB ¥148</td>
+            <td>PC/Xbox360/Xbox One/PS3|4</td>
+            <td>298110</td>
+            <td><a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%824/56c4948488a7e300458b4754.html">Ubisoft(育碧)</a><br /><a href="https://store.steampowered.com/app/298110/Far_Cry_4/">Steam</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Metro Exodus</td>
+            <td>单机线性FPS</td>
+            <td>Steam:RMB ¥148 Epic:RMB ¥149</td>
+            <td>PC/PS4/Xbox One</td>
+            <td>412020</td>
+            <td><a href="https://store.steampowered.com/app/412020/Metro_Exodus/">Steam</a><br /><a href="https://store.epicgames.com/zh-CN/p/metro-exodus">Epic</a></td>
+            <td>/</td>
+        </tr>
+        <tr>
+            <td>Metro Awakening(即将推出)</td>
+            <td>单机线性FPS</td>
+            <td>未知</td>
+            <td>VR</td>
+            <td>2669410</td>
+            <td><a href="https://store.steampowered.com/app/2669410/Metro_Awakening/">Steam</a></td>
+            <td>/</td>
+        </tr>
+<tr>
+    <td>HITMAN World of Assassination</td>
+    <td>单人潜行第三人称刺杀</td>
+    <td>Steam:RMB ¥238 Epic:RMB ¥218</td>
+    <td>PC/PS4|5/Xbox One/Xbox Series X|S/Stadia/VR</td>
+    <td>1659040</td>
+    <td>
+        <a href="https://store.steampowered.com/app/1659040/HITMAN_World_of_Assassination/">Steam</a><br />
+        <a href="https://store.epicgames.com/zh-CN/p/hitman-3">Epic</a>
+    </td>
+    <td>
+        <a href="https://wwyk.lanzoue.com/iyPEm24bsp6h">Demo升级完整版线上补丁</a>
+    </td>
+</tr>
+<tr>
+    <td>极限竞速：地平线5</td>
+    <td>单机剧情/多人对战/合作赛车</td>
+    <td>RMB ¥248</td>
+    <td>PC/Xbox Series X|S/Xbox One</td>
+    <td>1551360</td>
+    <td>
+        <a href="https://store.steampowered.com/app/1551360/_5/">Steam</a><br />
+        <a href="https://www.xbox.com/zh-CN/games/store/5/9NKX70BBCDRN/0010">Xbox</a>
+    </td>
+    <td>
+        <a href="https://wwyk.lanzoue.com/i6zyq28i36ud">清单(含DLC)</a>
+    </td>
+</tr>
+<tr>
+    <td>Far Cry Primal</td>
+    <td>单机开放世界FPS</td>
+    <td>RMB ¥248</td>
+    <td>PC/Xbox One/PS4</td>
+    <td>371660</td>
+    <td>
+        <a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%82%EF%BC%9A%E9%87%8E%E8%9B%AE%E7%BA%AA%E6%BA%90/58f9d0016b54a49f138b4568.html">Ubisoft(育碧)</a><br />
+        <a href="https://store.steampowered.com/app/371660/Far_Cry_Primal/">Steam</a>
+    </td>
+    <td>/</td>
+</tr>
+<tr>
+    <td>Far Cry 5</td>
+    <td>PVP/PVE/单机开放世界FPS</td>
+    <td>RMB ¥298</td>
+    <td>PC/PS4/Xbox One</td>
+    <td>552520</td>
+    <td>
+        <a href="https://store.ubisoft.com/cn/%E3%80%8A%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%82-5%E3%80%8B/59197f14adc7245a288b4567.html">Ubisoft(育碧)</a><br />
+        <a href="https://store.steampowered.com/app/552520/Far_Cry_5/">Steam</a>
+    </td>
+    <td>/</td>
+</tr>
+<tr>
+    <td>Far Cry 6</td>
+    <td>双人PVE/单机开放世界FPS</td>
+    <td>RMB ¥298</td>
+    <td>PC/Xbox Series X|S/PS4|5/Xbox One/Stadia</td>
+    <td>2369390</td>
+    <td>
+        <a href="https://store.ubisoft.com/cn/%E5%AD%A4%E5%B2%9B%E6%83%8A%E9%AD%82-6/5ecd2cac5cdf9a1528a8c1d2.html">Ubisoft(育碧)</a><br />
+        <a href="https://store.steampowered.com/app/2369390/Far_Cry_6/?curator_clanid=34004029">Steam</a>
+    </td>
+    <td>/</td>
+</tr>
+<tr>
+    <td>赛博朋克2077</td>
+    <td>单机剧情FPS</td>
+    <td>RMB ¥298</td>
+    <td>PC/PS4|5/Xbox One/Xbox Series X</td>
+    <td>1091500</td>
+    <td>
+        <a href="https://store.steampowered.com/app/1091500/_2077/">Steam</a><br />
+        <a href="https://store.epicgames.com/zh-CN/p/cyberpunk-2077">Epic</a>
+    </td>
+    <td>
+        <a href="https://wwyk.lanzoue.com/iy7Fz28i3l4h">全DLC清单</a>
+    </td>
+</tr>
+<tr>
+    <td>使命召唤®：黑色行动 6</td>
+    <td>单机剧情/多人快节奏FPS</td>
+    <td>RMB ¥488</td>
+    <td>PC/Xbox/PS</td>
+    <td>1938090</td>
+    <td>
+        <a href="https://store.steampowered.com/app/1938090/_/">Steam</a>
+    </td>
+    <td>/</td>
+</tr>
+</table>
+    <br /><br /><br /><br /><br /><br /><br />
+</center>
+</div>
+<div id="content11" class="content">
+    <h3>LANREN的其他作品</h3>
+    <div style="margin-left: 190px;" class="btn-group">
+        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">LANREN的杂物间（本地版）</button>
+        <ul class="dropdown-menu">
+            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i0Z0J1z1z95c" class="btn btn-link btn-outline-light text-dark"><b>LANREN的杂物间（本地版）</b></a>
+            <a style="text-decoration: none;" href="https://share.weiyun.com/XSRS73HM" class="btn btn-link btn-outline-light text-dark"><b>LANREN的杂物间（早期本地版）</b></a>
+            <a style="text-decoration: none;" href="https://share.weiyun.com/IzofUGTZ" class="btn btn-link btn-outline-light text-dark"><b>LANREN的杂物间（最早期本地版）</b></a>
+        </ul>
+        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown">Steamtools教程</button>
+        <ul class="dropdown-menu">
+            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i46Sd26ws42f" class="btn btn-link btn-outline-light text-dark"><b>Steamtools使用教程（Flash版） 密码:68bb</b></a>
+            <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/b00rnb60ti" class="btn btn-link btn-outline-light text-dark"><b>LANREN Steamtools教程（HTML版） 密码:etzn（本文档）</b></a>
+        </ul>
+        <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/iyPEm24bsp6h" class="btn btn-link btn-outline-light text-dark"><b>杀手3游戏Demo升级完整版补丁+线上补丁</b></a>
+        <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i46Sd26ws42f" class="btn btn-link btn-outline-light text-dark"><b>The Room壁纸 密码:cb4b</b></a>
+        <a style="text-decoration: none;" href="https://wwyk.lanzoue.com/i46Sd26ws42f" class="btn btn-link btn-outline-light text-dark"><b>迅雷破解 密码:LANREN</b></a>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<div id="content12" class="content">
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#t1">内容提议</button>
+    <div id="t1" class="collapse"><br />
+        <ul>
+            <b>
+                <h3>
+                    <li>Class_as</li><br />
+                    <li>魈鸟</li><br />
+                    <li>方乾乾</li><br />
+                    <li>7Day、Superman</li><br />
+                    <li>🐇传说中的吉跋猫🐇</li>
+                    <li>wangxianming-code</li>
+                </h3>
+            </b>
+        </ul>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#t2">部分资源提供</button>
+    <div id="t2" class="collapse"><br />
+        <ul>
+            <h3>
+                <li>菜Games</li><br />
+                <li>方乾乾</li><br />
+                <li>IKUN</li>
+            </h3>
+        </ul>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<div id="content13" class="content">
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-3">LANREN Steamtools --- V2.3 Demo</button>
+    <div id="V2-3" class="collapse"><br />
+        <b><h3>LANREN Steamtools --- V2.3 Demo</h3></b>
+        <h3><small>参与更新：LANREN</small></h3>
+        <small><h3>更新时间：2024年9月17日</h3></small>
+        <ul style="margin-left: 200px;">
             <p><li>如果窗口<b>小于768像素</b>主页按钮将不会显示，会显示一个<b>菜单按钮</b>里含主页按钮</li></p>
             <p><li>取消“<b>MV推荐</b>”的按钮组</li></p>
             <p><li>修改“<b>音乐推荐</b>”将全部主题形成按钮组并分成两类，非游戏主题和游戏主题</li></p>
             <p><li>修复了主页按钮不是居中问题</li></p>
-            <p><li>修复了一个MV</li></p>
-            <br /><p><li>更换UI界面</li></p></ul>
-            <p><small>主页按钮变成有颜色的，减小时间显示，给时间显示和按钮加了个区块</small></p><br />
-            <ul style="margin-left: 200px;">
-            <p><li>添加了6首“<b>MV推荐</b>”</li></p></ul>
-            <p><small>分别是<b>“See That? - NMIXX”,“Ditto Part A - NewJeans”,“Ditto Part B - NewJeans”,“Tired - Alan Walker,Iselin Solheim”,“Ghost - Alan Walker,Au/Ra”</b></small></p>
-            </div><br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-2FIX">LANREN Steamtools --- V2.2FIX Demo</button>
-            <div id="V2-2FIX" class="collapse"><br />
-            <b><h3>LANREN Steamtools --- V2.2FIX Demo</h3></b>
-            <h3><small>参与更新(包含提出意见)：LANREN | 🐇传说中的吉跋猫🐇</small></h3>
-            <small><h3>更新时间：2024年9月16日</h3></small>
-            <ul style="margin-left: 200px;">
+            <p><li>修复了一个MV</li></p><br />
+            <p><li>更换UI界面</li></p>
+        </ul>
+        <p><small>主页按钮变成有颜色的，减小时间显示，给时间显示和按钮加了个区块</small></p><br />
+        <ul style="margin-left: 200px;">
+            <p><li>添加了6首“<b>MV推荐</b>”</li></p>
+        </ul>
+        <p><small>分别是<b>“See That? - NMIXX”,“Ditto Part A - NewJeans”,“Ditto Part B - NewJeans”,“Tired - Alan Walker,Iselin Solheim”,“Ghost - Alan Walker,Au/Ra”</b></small></p>
+    </div><br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-2FIX">LANREN Steamtools --- V2.2FIX Demo</button>
+    <div id="V2-2FIX" class="collapse"><br />
+        <b><h3>LANREN Steamtools --- V2.2FIX Demo</h3></b>
+        <h3><small>参与更新(包含提出意见)：LANREN | 🐇传说中的吉跋猫🐇</small></h3>
+        <small><h3>更新时间：2024年9月16日</h3></small>
+        <ul style="margin-left: 200px;">
             <p><li>修复了<b>“视频教程”</b>打开html就会自动播放问题</li></p>
             <p><li>修复了<b>“视频教程”</b>页面的不能全屏问题</li></p>
             <p><li><b>“MV推荐”</b>的<b>“Faded - Alan Walker（2015）”</b>改成<b>“Faded - Alan Walker（2015年）”</b></li></p>
-            <p><li><b>“MV推荐”</b>新增4首MV</li></p></ul>
-            <p><small>分别是<b>“On My Way - Alan Walker,Sabrina Carpenter,Farruko”“The Spectre - Alan Walker”“Darkside - Alan Walker,Au/Ra,Tomine Harket”“Sing Me To Sleep - Alan Walker,Jesper Borgen,Mood Melodies,Tommy La Verdi,Gunnar Greve”</b></small></p>
-            </div>
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-2">LANREN Steamtools --- V2.2 Demo</button>
-            <div id="V2-2" class="collapse"><br />
-            <b><h3>LANREN Steamtools --- V2.2 Demo</h3></b>
-            <h3><small>参与更新：LANREN</small></h3>
-            <small><h3>更新时间：2024年9月16日</h3></small>
-            <ul style="margin-left: 200px;">
+            <p><li><b>“MV推荐”</b>新增4首MV</li></p>
+        </ul>
+        <p><small>分别是<b>“On My Way - Alan Walker,Sabrina Carpenter,Farruko”“The Spectre - Alan Walker”“Darkside - Alan Walker,Au/Ra,Tomine Harket”“Sing Me To Sleep - Alan Walker,Jesper Borgen,Mood Melodies,Tommy La Verdi,Gunnar Greve”</b></small></p>
+    </div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-2">LANREN Steamtools --- V2.2 Demo</button>
+    <div id="V2-2" class="collapse"><br />
+        <b><h3>LANREN Steamtools --- V2.2 Demo</h3></b>
+        <h3><small>参与更新：LANREN</small></h3>
+        <small><h3>更新时间：2024年9月16日</h3></small>
+        <ul style="margin-left: 200px;">
             <p><li>给主页可切换页面按钮添加了<b>“提示框显示位置实例”</b>且减小大小横向居中显示</li></p><br />
-            <p><li>区分了<b>Video</b>和<b>Iframe</b></li></p></ul>
-            <p><small>区分能保证<b>“MV推荐”</b>中视频可以全屏也能循环播放</small></p><br />
-            <ul style="margin-left: 200px;"><p><li>修改<b>Video</b>和<b>Iframe</b>窗口默认值</li></p>
+            <p><li>区分了<b>Video</b>和<b>Iframe</b></li></p>
+        </ul>
+        <p><small>区分能保证<b>“MV推荐”</b>中视频可以全屏也能循环播放</small></p><br />
+        <ul style="margin-left: 200px;">
+            <p><li>修改<b>Video</b>和<b>Iframe</b>窗口默认值</li></p>
             <p><li>修改<b>“MV推荐”</b>页面可以循环播放</li></p><br />
             <p><li>取消<b>可切换页面按钮和Iframe视频</b>固定效果</li></p>
-            <p><li>如果浏览器不支持JavaScript就会显示<b>“现在已经114514世纪了能不能换一个支持JavaScript的浏览器？”和“如果您的浏览器支持JavaScript，请在设置打开再重新打开文件试试。”</b></p></ul>
-            <p><small>为了保证移动端浏览体验</small></p><br />
-            <ul style="margin-left: 200px;">
+            <p><li>如果浏览器不支持JavaScript就会显示<b>“现在已经114514世纪了能不能换一个支持JavaScript的浏览器？”和“如果您的浏览器支持JavaScript，请在设置打开再重新打开文件试试。”</b></li></p>
+        </ul>
+        <p><small>为了保证移动端浏览体验</small></p><br />
+        <ul style="margin-left: 200px;">
             <p><li>“音乐推荐”中的<b>“Bad Boy - Red Velvet”</b>替换成<b>“Bad Boy(MV) - Red Velvet”</b>且更换音乐链接</li></p>
             <p><li>修改了<b>“其他作品”</b>的链接按钮样式横向显示</li></p><br />
-            <p><li><b>“MV推荐”</b>新增6首MV</li></p></ul>
-            <p><small>分别是“<b>Psycho - Red Velvet</b>”“<b>Cosmic - Red Velvet</b>”“<b>Feel My Rhythm - Red Velvet</b>”“<b>Happinees - Red Velvet</b>”“<b>Armageddon - Aespa</b>”“<b>Faded - Alan Walker</b>”</small></p>
-            </div>
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-1">LANREN Steamtools --- V2.1 Demo</button>
-            <div id="V2-1" class="collapse"><br />
-            <b><h3>LANREN Steamtools --- V2.1 Demo</h3></b>
-            <h3><small>参与更新：LANREN</small></h3>
-            <small><h3>更新时间：2024年9月16日</h3></small>
-            <ul style="margin-left: 200px;">
+            <p><li><b>“MV推荐”</b>新增6首MV</li></p>
+        </ul>
+        <p><small>分别是“<b>Psycho - Red Velvet</b>”“<b>Cosmic - Red Velvet</b>”“<b>Feel My Rhythm - Red Velvet</b>”“<b>Happinees - Red Velvet</b>”“<b>Armageddon - Aespa</b>”“<b>Faded - Alan Walker</b>”</small></p>
+    </div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-1">LANREN Steamtools --- V2.1 Demo</button>
+    <div id="V2-1" class="collapse"><br />
+        <b><h3>LANREN Steamtools --- V2.1 Demo</h3></b>
+        <h3><small>参与更新：LANREN</small></h3>
+        <small><h3>更新时间：2024年9月16日</h3></small>
+        <ul style="margin-left: 200px;">
             <p><li>修复了<b>“网页/软件推荐”</b>的<b>“远程控制打不开功能”</b></li></p>
             <p><li>改动主页<b>“Html 5编写”</b>>>><b>“HTML编写”</b>问题</li></p>
             <p><li>改动<b>“Onekey | Tools疑难解答”</b>部分内容</li></p>
@@ -1823,23 +2065,27 @@
             <p><li>替换<b>“空白页面”</b>>>><b>“LANREN其他作品”</b>可切换页面</li></p>
             <p><li>引用了<b>“内嵌按钮组”“链接按钮组”“高亮文本”</b>功能</li></p>
             <p><li>新增<b>“视频教程”“MV推荐”</b>（仅仅只是Beta，不要抱太大期望，链接可能很快就失效）</li></p>
-            </ul>
-            </div>
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-0">LANREN Steamtools --- V2.0 Demo</button>
-            <div id="V2-0" class="collapse"><br />
-            <b><h3>LANREN Steamtools --- V2.0 Demo</h3></b>
-            <h3><small>参与更新(包含提出意见)：LANREN | 方乾乾</small></h3>
-            <small><h3>更新时间：2024年9月15日</h3></small>
-            <ul style="margin-left: 200px;">
+        </ul>
+    </div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-outline-danger" data-bs-toggle="collapse" data-bs-target="#V2-0">LANREN Steamtools --- V2.0 Demo</button>
+    <div id="V2-0" class="collapse"><br />
+        <b><h3>LANREN Steamtools --- V2.0 Demo</h3></b>
+        <h3><small>参与更新(包含提出意见)：LANREN | 方乾乾</small></h3>
+        <small><h3>更新时间：2024年9月15日</h3></small>
+        <ul style="margin-left: 200px;">
             <p><li>引入<b>Bootstrap5</b> 优化HTML体验</li></p>
-            <p><li>修改<b>“Onekey | Tools疑难解答”</b>部分内容</p></li>
-            <p><li>新增了6首音乐</p></li>
-            <p><li>新增了更新日志</p></li>
-            <p><li>音乐播放器鼠标选中HTML下面显示</p></li>
-            <p><li>失效了7首音乐链接</p></li></ul>
-        </div></div>
-        <div id="content14" class="content">
-            <div class="btn-group-vertical">
+            <p><li>修改<b>“Onekey | Tools疑难解答”</b>部分内容</li></p>
+            <p><li>新增了6首音乐</li></p>
+            <p><li>新增了更新日志</li></p>
+            <p><li>音乐播放器鼠标选中HTML下面显示</li></p>
+            <p><li>失效了7首音乐链接</li></p>
+        </ul>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+</div>
+<div id="content14" class="content">
+    <div class="btn-group-vertical">
         <script>
             function toggleVideo(videoId) {
                 var videoDiv = document.getElementById('videoContainer' + videoId.slice(-1));
@@ -1857,22 +2103,30 @@
                     iframeDiv.style.display = 'none';
                 }
             }
-            </script>
-                <button class="btn btn-outline-danger" style="margin-left: 200px" onclick="toggleIframe('iframe1')">Onekey入库教程</button>
-                <button class="btn btn-outline-danger" style="margin-left: 200px" onclick="toggleIframe('iframe2')">Steamtools共享账号解锁教程</button>
-            
-                <div id="iframeContainer1" style="display:none;margin-left: 200px">
-                <center><iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=113002770596685&bvid=BV1DZW3eKErE&cid=500001657706472&p=1&autoplay=0" scrolling="no" frameborder="no" border="0" allowfullscreen="true" width="1100" height="700"></iframe></center>
-                </div>
-            
-                <div id="iframeContainer2" style="display:none; margin-left: 200px">
-                <center><iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=661572586&bvid=BV1nh4y1h7Ji&cid=1284291361&p=1&autoplay=0" scrolling="no" frameborder="no" border="0" allowfullscreen="true" allowfullscreen="true" width="1100" height="700"></iframe></center>
-                </div>
-        </div></div>
-        <div id="content15" class="content col">
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#MusicVidoe">K-POP(韩国流行音乐)</button>
-            <div id="MusicVidoe" class="collapse"><br />
-            <div style="margin-left: 200px">
+        </script>
+<button class="btn btn-outline-danger" style="margin-left: 200px" onclick="toggleIframe('iframe1')">Onekey入库教程</button>
+<button class="btn btn-outline-danger" style="margin-left: 200px" onclick="toggleIframe('iframe2')">Steamtools共享账号解锁教程</button>
+
+<div id="iframeContainer1" style="display:none;margin-left: 200px">
+    <center>
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=113002770596685&bvid=BV1DZW3eKErE&cid=500001657706472&p=1&autoplay=0" scrolling="no" frameborder="no" border="0" allowfullscreen="true" width="1100" height="700"></iframe>
+    </center>
+</div>
+
+<div id="iframeContainer2" style="display:none; margin-left: 200px">
+    <center>
+        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=661572586&bvid=BV1nh4y1h7Ji&cid=1284291361&p=1&autoplay=0" scrolling="no" frameborder="no" border="0" allowfullscreen="true" width="1100" height="700"></iframe>
+    </center>
+</div>
+</div>
+</div>
+
+<div id="content15" class="content col">
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#MusicVidoe">K-POP(韩国流行音乐)</button>
+    <div id="MusicVidoe" class="collapse">
+        <br />
+        <div style="margin-left: 200px">
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video1')">Bad Boy - Red Velvet（2018年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video2')">Psycho - Red Velvet（2019年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video3')">Cosmic - Red Velvet（2024年）</button>
@@ -1882,124 +2136,167 @@
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('videoA')">Drama - Aespa（2023年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('videoN')">See That? - NMIXX（2024年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('videoR')">Ditto - NewJeans(Part A)（2022年）</button>
-            <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('videoE')">Ditto - NewJeans(Part B)（2022年）</button></div></div>
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#MusicVidoe-1">Alan Walker</button>
-            <div id="MusicVidoe-1" class="collapse"><br />
-            <div style="margin-left: 200px">
+            <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('videoE')">Ditto - NewJeans(Part B)（2022年）</button>
+        </div>
+    </div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#MusicVidoe-1">Alan Walker</button>
+    <div id="MusicVidoe-1" class="collapse">
+        <br />
+        <div style="margin-left: 200px">
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video7')">Faded - Alan Walker（2015年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video8')">On My Way - Alan Walker,Sabrina Carpenter,Farruko（2019年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video9')">The Spectre - Alan Walker（2017年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video0')">Darkside - Alan Walker,Au/Ra,Tomine Harket（2018年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('videoL')">Sing Me To Sleep - Alan Walker,Iselin Solheim（2016年）</button>
             <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video教')">Tired - Alan Walker,Gavin James（2017年）</button>
-            <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video主')">Ghost - Alan Walker,Au/Ra（2019年）</button></div>
-            </div>
-            <br /><button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#MusicVidoeMagnet">磁力链接下载</button>
-            <div style="margin-left: 200px" id="MusicVidoeMagnet" class="collapse"><br />
-            <a href="magnet:?xt=urn:btih:c5d7d6f5367a4bbcb0e767a3b68ec88a1be94637&dn=Bad%20Boy%20-%20Red%20Velvet.mp4&tr=http%3A%2F%2F1337.abcvg.info%3A80%2Fannounce&tr=udp%3A%2F%2F207.241.226.111%3A6969%2Fannounce&tr=udp%3A%2F%2F207.241.231.226%3A6969%2Fannounce&tr=udp%3A%2F%2F%5B2a01%3A4f8%3Ac012%3A8025%3A%3A1%5D%3A8080%2Fannounce&tr=udp%3A%2F%2F%5B2a04%3Aac00%3A1%3A3dd8%3A%3A1%3A2710%5D%3A2710%2Fannounce&tr=http%3A%2F%2Fbt.okmp3.ru%3A2710%2Fannounce&tr=http%3A%2F%2Fbvarf.tracker.sh%3A2086%2Fannounce&tr=http%3A%2F%2Fch3oh.ru%3A6969%2Fannounce&tr=http%3A%2F%2Fipv4announce.sktorrent.eu%3A6969%2Fannounce&tr=http%3A%2F%2Fipv6.rer.lol%3A6969%2Fannounce&tr=udp%3A%2F%2Fisk.richardsw.club%3A6969%2Fannounce&tr=udp%3A%2F%2Fjvavav.com%3A6969%2Fannounce&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=http%3A%2F%2Fregion.nl1.privex.cc%3A6969%2Fannounce&tr=udp%3A%2F%2Fretracker.hotplug.ru%3A2710%2Fannounce&tr=http%3A%2F%2Fretracker.x2k.ru%3A80%2Fannounce&tr=http%3A%2F%2Ftaciturn-shadow.spb.ru%3A6969%2Fannounce&tr=http%3A%2F%2Ftk.greedland.net%3A80%2Fannounce&tr=http%3A%2F%2Ftorrentsmd.com%3A8080%2Fannounce&tr=http%3A%2F%2Ftr.kxmp.cf%3A80%2Fannounce&tr=http%3A%2F%2Ftracker-zhuqiy.dgj055.icu%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.auctor.tv%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.bt4g.com%3A2095%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dump.cl%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.edkj.club%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.electro-torrent.pl%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.files.fm%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.guguan.000.pe%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.ipv6tracker.org%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.k.vu%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.mywaifu.best%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.renfei.net%3A8080%2Fannounce&tr=http%3A%2F%2Ftracker.waaa.moe%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker2.itzmx.com%3A6961%2Fannounce&tr=udp%3A%2F%2Ftracker3.itzmx.com%3A6961%2Fannounce&tr=udp%3A%2F%2Ftracker4.itzmx.com%3A2710%2Fannounce&tr=udp%3A%2F%2Fwepzone.net%3A6969%2Fannounce&tr=http%3A%2F%2Fwww.all4nothin.net%3A80%2Fannounce.php&tr=http%3A%2F%2Fwww.peckservers.com%3A9000%2Fannounce&tr=http%3A%2F%2Fwww.wareztorrent.com%3A80%2Fannounce&tr=https%3A%2F%2F1337.abcvg.info%3A443%2Fannounce&tr=https%3A%2F%2Fjvavav.com%3A443%2Fannounce&tr=https%3A%2F%2Fpybittrack.retiolus.net%3A443%2Fannounce&tr=https%3A%2F%2Fretracker2.x2k.ru%3A443%2Fannounce&tr=https%3A%2F%2Ftr.abir.ga%3A443%2Fannounce&tr=https%3A%2F%2Ftr.burnabyhighstar.com%3A443%2Fannounce&tr=https%3A%2F%2Ftracker-zhuqiy.dgj055.icu%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.cloudit.top%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.gcrenwp.top%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.imgoingto.icu%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.ipfsscan.io%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.itscraftsoftware.my.id%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.kuroy.me%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.lilithraws.org%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.pmman.tech%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.renfei.net%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.tamersunion.org%3A443%2Fannounce&tr=https%3A%2F%2Ftracker.yemekyedim.com%3A443%2Fannounce&tr=https%3A%2F%2Ftracker1.520.jp%3A443%2Fannounce&tr=https%3A%2F%2Ftrackers.mlsub.net%3A443%2Fannounce&tr=https%3A%2F%2Ftrackers.run%3A443%2Fannounce&tr=https%3A%2F%2Fwww.peckservers.com%3A9443%2Fannounce&tr=udp%3A%2F%2F1c.premierzal.ru%3A6969%2Fannounce&tr=http%3A%2F%2F207.241.226.111%3A6969%2Fannounce&tr=http%3A%2F%2F207.241.231.226%3A6969%2Fannounce&tr=udp%3A%2F%2F49.12.76.8%3A8080%2Fannounce&tr=udp%3A%2F%2F52.58.128.163%3A6969%2Fannounce&tr=http%3A%2F%2F%5B2a01%3A4f8%3Ac012%3A8025%3A%3A1%5D%3A8080%2Fannounce&tr=udp%3A%2F%2F%5B2a03%3A7220%3A8083%3Acd00%3A%3A1%5D%3A451%2Fannounce&tr=http%3A%2F%2F%5B2a04%3Aac00%3A1%3A3dd8%3A%3A1%3A2710%5D%3A2710%2Fannounce&tr=udp%3A%2F%2F%5B2a0f%3Ae586%3Af%3Af%3A%3A81%5D%3A6969%2Fannounce&tr=udp%3A%2F%2Faegir.sexy%3A6969%2Fannounce&tr=udp%3A%2F%2Famigacity.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fbandito.byterunner.io%3A6969%2Fannounce&tr=udp%3A%2F%2Fbt.ktrackers.com%3A6666%2Fannounce&tr=udp%3A%2F%2Fbt.rer.lol%3A2710%2Fannounce&tr=udp%3A%2F%2Fbt.rer.lol%3A6969%2Fannounce&tr=udp%3A%2F%2Fbt1.archive.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fbt2.archive.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fconcen.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fd40969.acod.regrucolo.ru%3A6969%2Fannounce&tr=udp%3A%2F%2Fec2-18-191-163-220.us-east-2.compute.amazonaws.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fevan.im%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.rer.lol%3A2710%2Fannounce&tr=http%3A%2F%2Fisk.richardsw.club%3A6969%2Fannounce&tr=udp%3A%2F%2Fjutone.com%3A6969%2Fannounce&tr=http%3A%2F%2Fjvavav.com%3A80%2Fannounce&tr=udp%3A%2F%2Fleet-tracker.moe%3A1337%2Fannounce&tr=udp%3A%2F%2Fmartin-gebhardt.eu%3A25%2Fannounce&tr=udp%3A%2F%2Fmoonburrow.club%3A6969%2Fannounce&tr=udp%3A%2F%2Fnew-line.net%3A6969%2Fannounce&tr=udp%3A%2F%2Fns575949.ip-51-222-82.net%3A6969%2Fannounce&tr=udp%3A%2F%2Fodd-hd.fr%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fopen.dstud.io%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Fopen.tracker.ink%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.u-p.pw%3A6969%2Fannounce&tr=udp%3A%2F%2Fopentor.org%3A2710%2Fannounce&tr=udp%3A%2F%2Fopentracker.io%3A6969%2Fannounce&tr=udp%3A%2F%2Fp2p.publictracker.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fp4p.arenabg.com%3A1337%2Fannounce&tr=udp%3A%2F%2Fpublic.tracker.vraphim.com%3A6969%2Fannounce&tr=http%3A%2F%2Fretracker.hotplug.ru%3A2710%2Fannounce&tr=udp%3A%2F%2Fretracker01-msk-virt.corbina.net%3A80%2Fannounce&tr=udp%3A%2F%2Frun.publictracker.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Fseedpeer.net%3A6969%2Fannounce&tr=udp%3A%2F%2Fserpb.vpsburti.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftamas3.ynh.fr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftk2.trackerservers.com%3A8080%2Fannounce&tr=udp%3A%2F%2Ftk2v6.trackerservers.com%3A8080%2Fannounce&tr=udp%3A%2F%2Ftorrents.artixlinux.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftrackarr.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker-us.silksa.co.za%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.0x7c0.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.birkenwald.de%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.bittor.pw%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.breizh.pm%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.ccp.ovh%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.darkness.services%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.deadorbit.nl%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.dler.com%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.dump.cl%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.edkj.club%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.farted.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.filemail.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.fnix.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.gmi.gd%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.jamesthebard.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.skynetcloud.site%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.skyts.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.srv00.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.theoks.net%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Ftracker.torrust-demo.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.tryhackx.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.xor.st%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker1.myporn.club%3A9337%2Fannounce&tr=http%3A%2F%2Ftracker2.dler.org%3A80%2Fannounce&tr=http%3A%2F%2Ftracker2.itzmx.com%3A6961%2Fannounce&tr=http%3A%2F%2Ftracker3.itzmx.com%3A6961%2Fannounce&tr=http%3A%2F%2Ftracker4.itzmx.com%3A2710%2Fannounce&tr=udp%3A%2F%2Fttk2.nbaonlineservice.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fu4.trakx.crim.ist%3A1337%2Fannounce&tr=udp%3A%2F%2Fu6.trakx.crim.ist%3A1337%2Fannounce&tr=http%3A%2F%2Fwepzone.net%3A6969%2Fannounce&tr=udp%3A%2F%2Fwww.torrent.eu.org%3A451%2Fannounce&tr=udp%3A%2F%2Fz.mercax.com%3A53%2Fannounce&tr=wss%3A%2F%2Ftracker.openwebtorrent.com%3A443%2Fannounce" type="button" class="btn btn-outline-danger">Bad Boy - Red Velvet（2018年）</a>
-            </div></div>
-            <div id="videoContainer1" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172007/2d29f58d335250dac3d52be53a30605c/v2/957ab9808a573266503e70002038d5d6/G129/M06/02/00/YZQEAFpu6oKAaC8NBsbZiPvUuqM689.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer2" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.tx.kugou.com/202409172008/c0ffa4af11467085e15b973b6270dc91/v2/311e33cff9c1e611edfa5be2a692f6ad/G177/M00/0D/01/kZQEAF4Ai3qAR_RdBM8WMo-MViw514.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer3" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172011/af9a1dcbe95f5c35bb45fe80e5ac67d1/KGTX/CLTX002/2f8214e658b9bba8169486080ed4e616.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer4" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172012/3b7ddb6b55510b2cfb4d6d32553af9d5/KGTX/CLTX002/50a00428d36a7bc64db65b75a4ef781a.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer5" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.tx.kugou.com/202409172012/6dc085f8b1e26e42f575ce522ae79040/v2/06ac26be1d901cc921aaf04c86baaa32/G136/M07/14/09/KIcBAFtqzDaARJGCBvrR08VcX4Q648.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer6" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172013/626c5781b75bcf9fc0827d420b5ddb41/KGTX/CLTX002/b72b1a70362bbb3edff558082ec2af7e.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer7" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.tx.kugou.com/202409172013/d7af8dc1b8c4dda148b6001322c67968/v2/00729fd255f2a80cca65f127f9a2313e/G095/M07/08/19/P5QEAFkl9lOAOoLmBFhky-uuCsg482.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer8" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.tx.kugou.com/202409172014/ce714315a105cf45fb34556335baa0e7/v2/6f0bd726d53b51e3aed9585b7305579b/G158/M03/14/09/fpQEAFyR3xCAKTzdBsNltK3Jsm8739.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer9" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172014/4baf554a1d32556365cb6affd0152135/v2/bcaf033db304797f493ea3d9cee9500f/G114/M04/01/19/UpQEAFm7inWAExAlBgs0XncV8jE246.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer0" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172015/e0e3a96fb4f7fad7a6f8c2c5151e8660/v2/84eae2e7ad30d00ccb4d62a8f9e5204d/G134/M04/00/18/JocBAFta0PmAeESRBv9L0kgc87I187.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainerL" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172016/be16e54e76a2261ac5fabcd83dee0ce7/v2/c647fc05074bf61120db813f4e6c8e76/G069/M0A/1F/15/JZQEAFdQ5xCAZx1HBZCcbGKMyUI561.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainerA" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.tx.kugou.com/202409172017/35157914ad28c6d5c6c1edcf4acc7887/v2/525b6648c28e69cb5216be9235d2e768/KGTX/CLTX002/525b6648c28e69cb5216be9235d2e768.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainerN" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409172018/68fb64f302dd83a81012e97a48c6f315/KGTX/CLTX002/b17983f4aa3461f0de6c46a2c9506db2.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainerR" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409171126/8d11c3e2cac8db0f85119688bc16f514/KGTX/CLTX002/22dd0a9ea5ec5694986cae327771bca6.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainerE" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409171128/f16d820b8037a49893253b968036833f/KGTX/CLTX002/4c8b874dbdd6faee17285510b00a28a5.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer教" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.tx.kugou.com/202409172017/b6e2bca9df2ba6506062c07a148a3255/v2/fc7681113637d9a990dbbcee246be4fc/G100/M01/11/01/RJQEAFkeoWaANCqdBEA_slGcTKs388.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
-            <div id="videoContainer主" style="display:none; margin-left: 200px">
-                <center><video width="1100" height="700" controls loop>
-                    <source src="https://mvwebfs.kugou.com/202409171202/af3659e5dc0795143e778f80da3ece7b/v2/972455f58d1a97623436907e53fc9930/G174/M09/05/11/jpQEAF3FKWmAVqFOBjtkU58G1cc758.mp4" type="video/mp4">
-                    您的浏览器不支持 HTML5 video 标签。
-                </video></center>
-            </div>
+            <button type="button" class="btn btn-outline-danger" onclick="toggleVideo('video主')">Ghost - Alan Walker,Au/Ra（2019年）</button>
         </div>
-    </body>
+    </div>
+    <br />
+    <button style="margin-left: 200px;" type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#MusicVidoeMagnet">磁力链接下载</button>
+    <div style="margin-left: 200px" id="MusicVidoeMagnet" class="collapse">
+        <br />
+        <a href="magnet:?xt=urn:btih:c5d7d6f5367a4bbcb0e767a3b68ec88a1be94637&dn=Bad%20Boy%20-%20Red%20Velvet.mp4&tr=http%3A%2F%2F1337.abcvg.info%3A80%2Fannounce&tr=udp%3A%2F%2F207.241.226.111%3A6969%2Fannounce" type="button" class="btn btn-outline-danger">Bad Boy - Red Velvet（2018年）</a>
+    </div>
+</div>
+
+<div id="videoContainer1" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172007/2d29f58d335250dac3d52be53a30605c/v2/957ab9808a573266503e70002038d5d6/G129/M06/02/00/YZQEAFpu6oKAaC8NBsbZiPvUuqM689.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer2" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.tx.kugou.com/202409172008/c0ffa4af11467085e15b973b6270dc91/v2/311e33cff9c1e611edfa5be2a692f6ad/G177/M00/0D/01/kZQEAF4Ai3qAR_RdBM8WMo-MViw514.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer3" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172011/af9a1dcbe95f5c35bb45fe80e5ac67d1/KGTX/CLTX002/2f8214e658b9bba8169486080ed4e616.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer4" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172012/3b7ddb6b55510b2cfb4d6d32553af9d5/KGTX/CLTX002/50a00428d36a7bc64db65b75a4ef781a.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer5" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.tx.kugou.com/202409172012/6dc085f8b1e26e42f575ce522ae79040/v2/06ac26be1d901cc921aaf04c86baaa32/G136/M07/14/09/KIcBAFtqzDaARJGCBvrR08VcX4Q648.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer6" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172013/626c5781b75bcf9fc0827d420b5ddb41/KGTX/CLTX002/b72b1a70362bbb3edff558082ec2af7e.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer7" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172013/d7af8dc1b8c4dda148b6001322c67968/v2/00729fd255f2a80cca65f127f9a2313e/G095/M07/08/19/P5QEAFkl9lOAOoLmBFhky-uuCsg482.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer8" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172014/ce714315a105cf45fb34556335baa0e7/v2/6f0bd726d53b51e3aed9585b7305579b/G158/M03/14/09/fpQEAFyR3xCAKTzdBsNltK3Jsm8739.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer9" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172014/4baf554a1d32556365cb6affd0152135/v2/bcaf033db304797f493ea3d9cee9500f/G114/M04/01/19/UpQEAFm7inWAExAlBgs0XncV8jE246.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer0" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172015/e0e3a96fb4f7fad7a6f8c2c5151e8660/v2/84eae2e7ad30d00ccb4d62a8f9e5204d/G134/M04/00/18/JocBAFta0PmAeESRBv9L0kgc87I187.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainerL" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172016/be16e54e76a2261ac5fabcd83dee0ce7/v2/c647fc05074bf61120db813f4e6c8e76/G069/M0A/1F/15/JZQEAFdQ5xCAZx1HBZCcbGKMyUI561.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainerA" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.tx.kugou.com/202409172017/35157914ad28c6d5c6c1edcf4acc7887/v2/525b6648c28e69cb5216be9235d2e768/KGTX/CLTX002/525b6648c28e69cb5216be9235d2e768.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainerN" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409172018/68fb64f302dd83a81012e97a48c6f315/KGTX/CLTX002/b17983f4aa3461f0de6c46a2c9506db2.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainerR" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409171126/8d11c3e2cac8db0f85119688bc16f514/KGTX/CLTX002/22dd0a9ea5ec5694986cae327771bca6.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainerE" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409171128/f16d820b8037a49893253b968036833f/KGTX/CLTX002/4c8b874dbdd6faee17285510b00a28a5.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer教" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.tx.kugou.com/202409172017/b6e2bca9df2ba6506062c07a148a3255/v2/fc7681113637d9a990dbbcee246be4fc/G100/M01/11/01/RJQEAFkeoWaANCqdBEA_slGcTKs388.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+<div id="videoContainer主" style="display:none; margin-left: 200px">
+    <center>
+        <video width="1100" height="700" controls loop>
+            <source src="https://mvwebfs.kugou.com/202409171202/af3659e5dc0795143e778f80da3ece7b/v2/972455f58d1a97623436907e53fc9930/G174/M09/05/11/jpQEAF3FKWmAVqFOBjtkU58G1cc758.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
+    </center>
+</div>
+</div>
+</body>
 </html>
