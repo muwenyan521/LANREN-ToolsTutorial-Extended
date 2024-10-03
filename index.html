@@ -2098,7 +2098,7 @@ selectedContent.classList.add('active');
                 }
             }
             function toggleIframe(iframeId) {
-                var iframeDiv = document.getElementById('iframeContainer' + iframeId.slice(-1));
+                var iframeDiv = document.getElementById('VContainer' + iframeId.slice(-1));
                 if (iframeDiv.style.display === 'none' || iframeDiv.style.display === '') {
                     iframeDiv.style.display = 'block';
                 } else {
@@ -2109,15 +2109,21 @@ selectedContent.classList.add('active');
 <button class="btn btn-outline-danger" style="margin-left: 200px" onclick="toggleIframe('iframe1')">Onekey入库教程</button>
 <button class="btn btn-outline-danger" style="margin-left: 200px" onclick="toggleIframe('iframe2')">Steamtools共享账号解锁教程</button>
 
-<div id="iframeContainer1" style="display:none;margin-left: 200px">
+<div id="VContainer1" style="display:none;margin-left: 200px">
     <center>
-        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=113002770596685&bvid=BV1DZW3eKErE&cid=500001657706472&p=1&autoplay=0" scrolling="no" frameborder="no" border="0" allowfullscreen="true" width="1100" height="700"></iframe>
+        <video width="1100" height="700" controls loop>
+            <source src="video/1.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
     </center>
 </div>
 
-<div id="iframeContainer2" style="display:none; margin-left: 200px">
+<div id="VContainer2" style="display:none; margin-left: 200px">
     <center>
-        <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=661572586&bvid=BV1nh4y1h7Ji&cid=1284291361&p=1&autoplay=0" scrolling="no" frameborder="no" border="0" allowfullscreen="true" width="1100" height="700"></iframe>
+        <video width="1100" height="700" controls loop>
+            <source src="video/2.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 video 标签,请更换或升级浏览器。
+        </video>
     </center>
 </div>
 </div>
